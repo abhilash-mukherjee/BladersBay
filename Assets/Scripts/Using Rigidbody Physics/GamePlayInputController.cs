@@ -104,22 +104,22 @@ public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandle
     public override void GoToBalanceMode()
     {
         Debug.Log("Balance Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.UP_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.UP_SWIPE, gameObject);
     }
     public override void GoToAttackMode()
     {
         Debug.Log("Attack Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.RIGHT_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.RIGHT_SWIPE, gameObject);
     }
     public override void GoToDefenceMode()
     {
         Debug.Log("Defence Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.LEFT_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.LEFT_SWIPE, gameObject);
     }
 }
 
 [System.Serializable]
-public class SwipeStatus
+public class InputGestures
 {
     public enum SwipeMode
     {

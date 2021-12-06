@@ -81,17 +81,17 @@ public class TutorialInputController : InputController, IFn1Handler, ISwipeHandl
     public override void GoToBalanceMode()
     {
         Debug.Log("Balance Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.UP_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.UP_SWIPE, gameObject);
     }
     public override void GoToAttackMode()
     {
         Debug.Log("Attack Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.RIGHT_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.RIGHT_SWIPE, gameObject);
     }
     public override void GoToDefenceMode()
     {
         Debug.Log("Defence Mode");
-        SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode.LEFT_SWIPE, gameObject);
+        SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode.LEFT_SWIPE, gameObject);
     }
 
     public void DisableFN1()

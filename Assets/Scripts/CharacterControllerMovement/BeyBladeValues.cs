@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class BeyBladeValues: MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class BeyBladeValues: MonoBehaviour
     private float damageValue;
     [SerializeField]
     private float speed;
-
+    [SerializeField]
+    private List<ModeValues> modeValueList ;
     public float AttackValue { get => attackValue; }
     public float DefenceValue { get => defenceValue;  }
     public float StaminaValue { get => staminaValue;  }
