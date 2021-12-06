@@ -23,20 +23,20 @@ public class PlayerStateMachine : CharacterStateMachine
         InputController.OnSwiped -= RespondToSwipe;
     }
 
-    private void RespondToSwipe(SwipeStatus.SwipeMode _mode, GameObject _gameObject)
+    private void RespondToSwipe(InputGestures.SwipeMode _mode, GameObject _gameObject)
     {
         if (_gameObject != gameObject)
             return;
        
         switch (_mode)
         {
-            case SwipeStatus.SwipeMode.UP_SWIPE:
+            case InputGestures.SwipeMode.UP_SWIPE:
                 OnSwipeUp();
                 break;
-            case SwipeStatus.SwipeMode.LEFT_SWIPE:
+            case InputGestures.SwipeMode.LEFT_SWIPE:
                 OnSwipeLeft();
                 break;
-            case SwipeStatus.SwipeMode.RIGHT_SWIPE:
+            case InputGestures.SwipeMode.RIGHT_SWIPE:
                 OnSwipeRight();
                 break;
             default:

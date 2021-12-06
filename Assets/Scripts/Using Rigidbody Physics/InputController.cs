@@ -2,7 +2,7 @@
 
 public abstract class InputController: MonoBehaviour
 {
-    public delegate void SwipeHandler(SwipeStatus.SwipeMode _mode, GameObject _gameObject);
+    public delegate void SwipeHandler(InputGestures.SwipeMode _mode, GameObject _gameObject);
     public static event SwipeHandler OnSwiped;
     protected Vector3 m_moveDirection;
     [HideInInspector]
@@ -24,7 +24,7 @@ public abstract class InputController: MonoBehaviour
 
     public virtual void GoToAttackMode() { }
     public virtual void GoToBalanceMode() { }
-    protected virtual void SendSwipeEventMessegeToParentClass(SwipeStatus.SwipeMode _mode, GameObject _gameObject)
+    protected virtual void SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode _mode, GameObject _gameObject)
     {
         OnSwiped?.Invoke(_mode, _gameObject);
     }

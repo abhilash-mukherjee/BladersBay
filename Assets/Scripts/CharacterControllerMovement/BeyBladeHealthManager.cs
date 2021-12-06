@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +6,6 @@ public class BeyBladeHealthManager : MonoBehaviour
 {
     public delegate void HealthChangeHandler(float _currentHealth, float _maxHealth, GameObject _beyBladeObject);
     public static event HealthChangeHandler OnHealthChanged;
-    [SerializeField]
-    private List<CollisionType> collisionTypes = new List<CollisionType>();
     [SerializeField]
     private float maxHealth;
     [SerializeField]
@@ -51,7 +48,7 @@ public class BeyBladeHealthManager : MonoBehaviour
     {
         CurrentHealth_Private += beyBladeValues.StaminaValue * Time.deltaTime * staminaConstant;
     }
-    private void HandleHealthAfterCollision(BeyBladeCollision _Collision)
+    private  void HandleHealthAfterCollision(BeyBladeCollision _Collision)
     {
         if (_Collision.IsAttacker(gameObject) == false && _Collision.IsVictim(gameObject) == false)
         {
@@ -84,23 +81,15 @@ public class BeyBladeHealthManager : MonoBehaviour
 
     private float CalculateDamageWhileAttacking(float _collisionIndex, GameObject _victim)
     {
-        Debug.Log($"Collision index = {_collisionIndex}");
         float _dmg = damageConstant * _victim.GetComponent<BeyBladeValues>().DefenceValue * beyBladeValues.DamageValue * _collisionIndex;
         return _dmg;
     }
 
     private float CalculateDamageWhileDefending(float _collisionIndex, GameObject _attacker)
     {
-        Debug.Log($"Collision index = {_collisionIndex}");
         float _dmg = damageConstant * _attacker.GetComponent<BeyBladeValues>().AttackValue * beyBladeValues.DamageValue * _collisionIndex;
         return _dmg;
     }
+
 }
 
-[System.Serializable]
-public class CollisionType
-{
-    public string Type;
-    public float AngleDifferenceUpperLimit;
-    public float CollisionIndex;
-}
