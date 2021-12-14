@@ -15,31 +15,18 @@ public class BeyBladeCollisionPhysicsManager : MonoBehaviour
     {
         CollisionManager.OnCollisionPhysicsCalculated += HandleCollsion;
     }
+
     private void OnDisable()
     {
         CollisionManager.OnCollisionPhysicsCalculated -= HandleCollsion;
-        
+
     }
 
-    private void HandleCollsion(BeyBladeCollision _collision)
+    private void HandleCollsion(IBasicCollision _collision)
     {
         if(_collision.CheckIfPassedGameObjectIsInvolvedInCollision(gameObject))
         {
             m_initialVelocityAfterCollision = _collision.GetVelocityAfterCollision(gameObject);
         }
-    }
-
-    private Vector3 CalculateInitialVelocityAfterCollision(Vector3 _otherVelocity, Vector3 _directionVectorOtherToThis)
-    {
-        _directionVectorOtherToThis.Normalize();
-        Vector3 _normalVelocity = Vector3.Dot(_directionVectorOtherToThis, _otherVelocity) * _directionVectorOtherToThis;
-        Vector3 _directionVectorThisToOther = -1f * _directionVectorOtherToThis;
-        Vector3 _vel = characterController.velocity;
-        float _angleInDegrees = Vector3.Angle(_directionVectorThisToOther, _vel); ;
-        float _angleInRadian = (Mathf.PI * _angleInDegrees / 180f);
-        Vector3 _tangentialVelocity = characterController.velocity
-            - characterController.velocity.magnitude * Mathf.Cos(_angleInRadian) * _directionVectorThisToOther;
-        Vector3 _finalVelocity = _normalVelocity + _tangentialVelocity;
-        return _finalVelocity;
     }
 }

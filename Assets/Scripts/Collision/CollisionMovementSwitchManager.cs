@@ -26,7 +26,7 @@ public abstract class CollisionMovementSwitchManager : MonoBehaviour
     {
         CollisionManager.OnCollisionStarted -= CollisionStarted;
     }
-    private void CollisionStarted(BeyBladeCollision _collision)
+    private void CollisionStarted(IBasicCollision _collision)
     {
         if (_collision.CheckIfPassedGameObjectIsInvolvedInCollision(gameObject))
         {

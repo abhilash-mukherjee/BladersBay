@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class OrdinaryMovementManagerWithCharacterController : MovementManagerWithCharacterController
 {
+    [SerializeField]
+    private BeyBladeValues beyBladeValues;
     protected override void Awake()
     {
         base.Awake();
@@ -10,6 +12,6 @@ public class OrdinaryMovementManagerWithCharacterController : MovementManagerWit
     }
     protected override Vector3 CalculateMovement()
     {
-         return m_BeyBladeParameters.attackMode_MovementMultiplier * m_inputController.MoveDirection;
+         return beyBladeValues.Speed * m_inputController.MoveDirection;
     }
 }

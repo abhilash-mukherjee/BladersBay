@@ -2,6 +2,10 @@
 
 public class KeyBoardInputController : InputController
 {
+    [SerializeField]
+    private KeyCode attackTrigger, defenceTrigger, staminaTrigger, balanceTrigger;
+    [SerializeField]
+    private GameEvent attackTriggerEvent, defenceTriggerEvent, staminaTriggerEvent, balanceTriggerEvent;
     private void Update()
     {
         float x,z;
@@ -22,5 +26,22 @@ public class KeyBoardInputController : InputController
         Vector3 _tempMove = new Vector3(x, 0f, z);
         _tempMove.Normalize();
         m_moveDirection = _tempMove;
+
+        if(Input.GetKeyDown(attackTrigger))
+        {
+            attackTriggerEvent.Raise();
+        }
+        else if(Input.GetKeyDown(defenceTrigger))
+        {
+            defenceTriggerEvent.Raise();
+        }
+        else if(Input.GetKeyDown(staminaTrigger))
+        {
+            staminaTriggerEvent.Raise();
+        }
+        else if(Input.GetKeyDown(balanceTrigger))
+        {
+            balanceTriggerEvent.Raise();
+        }
     }
 }

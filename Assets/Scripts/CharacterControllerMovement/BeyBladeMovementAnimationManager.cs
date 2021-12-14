@@ -46,9 +46,11 @@ public class BeyBladeMovementAnimationManager : MonoBehaviour
             trailLine.SetActive(false);
         }
         else
+        {
+            parentForChangingForwardRotation.transform.forward =
+                Vector3.Lerp(parentForChangingForwardRotation.transform.forward,
+                _activeMovementManager.CurrentVelocity.normalized, Time.deltaTime * rotationLerpSpeed);
             trailLine.SetActive(true);
-        parentForChangingForwardRotation.transform.forward =
-            Vector3.Lerp(parentForChangingForwardRotation.transform.forward,
-            _activeMovementManager.CurrentVelocity.normalized, Time.deltaTime * rotationLerpSpeed);
+        }
     }
 }

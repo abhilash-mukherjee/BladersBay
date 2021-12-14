@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-
+using UnityEngine.Events;
 public abstract class InputController: MonoBehaviour
 {
     public delegate void SwipeHandler(InputGestures.SwipeMode _mode, GameObject _gameObject);
-    public static event SwipeHandler OnSwiped;
+    public static event SwipeHandler OnSwiped1;
     protected Vector3 m_moveDirection;
     [HideInInspector]
     public Vector3 MoveDirection
@@ -26,6 +26,6 @@ public abstract class InputController: MonoBehaviour
     public virtual void GoToBalanceMode() { }
     protected virtual void SendSwipeEventMessegeToParentClass(InputGestures.SwipeMode _mode, GameObject _gameObject)
     {
-        OnSwiped?.Invoke(_mode, _gameObject);
+        OnSwiped1?.Invoke(_mode, gameObject);
     }
 }

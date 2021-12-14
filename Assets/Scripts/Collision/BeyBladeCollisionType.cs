@@ -22,6 +22,6 @@ public abstract class BeyBladeCollisionType: ScriptableObject
         }
         return false;
     }
-    public abstract List<CollidingBeyBlade> GetAttacker(BeyBladeCollision _collision);
-    public abstract List<CollidingBeyBlade> GetVictim(BeyBladeCollision _collision);
+    public abstract List<ICollidingBeyBlade> GetAttacker(BeyBladeCollision _collision);
+    public abstract List<ICollidingBeyBlade> GetVictim(BeyBladeCollision _collision);
 }

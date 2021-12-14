@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CollidingBeyBlade
+public class CollidingBeyBlade : ICollidingBeyBlade
 {
     private CharacterController m_controller;
     private GameObject m_beyBladeObject;
@@ -26,8 +26,8 @@ public class CollidingBeyBlade
         m_directionVectorToOtherBeyBlade = _directionVectorToOtherBeyBlade;
         m_velocityBeforeCollision = _controller.velocity;
         m_collisionAngle = FindAngleBetweenVelocityAndSeperationVector(m_controller, m_directionVectorToOtherBeyBlade);
-        m_velocityAfterCollision = CalculateInitialVelocityAfterCollision(_otherController.velocity,  -1f *_directionVectorToOtherBeyBlade,
-            _staticCollisionVelocityLimit,_staticCollisionVelociyMultiplier);
+        m_velocityAfterCollision = CalculateInitialVelocityAfterCollision(_otherController.velocity, -1f * _directionVectorToOtherBeyBlade,
+            _staticCollisionVelocityLimit, _staticCollisionVelociyMultiplier);
     }
 
     private float FindAngleBetweenVelocityAndSeperationVector(CharacterController _controller, Vector3 _dir)
@@ -43,7 +43,7 @@ public class CollidingBeyBlade
         return _angle;
     }
 
-    public Vector3 CalculateInitialVelocityAfterCollision(Vector3 _otherVelocity, Vector3 _directionVectorOtherToThis, 
+    protected virtual Vector3 CalculateInitialVelocityAfterCollision(Vector3 _otherVelocity, Vector3 _directionVectorOtherToThis,
         float _staticCollisionVelocityLimit, float _staticCollisionVelociyMultiplier)
     {
         _directionVectorOtherToThis.Normalize();
@@ -58,7 +58,7 @@ public class CollidingBeyBlade
         if (_velAfterCollision.magnitude <= _staticCollisionVelocityLimit)
         {
             Debug.Log("Colliding beyblade velocity multiplied");
-            _velAfterCollision =  _directionVectorOtherToThis * _staticCollisionVelociyMultiplier;
+            _velAfterCollision = _directionVectorOtherToThis * _staticCollisionVelociyMultiplier;
         }
         return _velAfterCollision;
     }

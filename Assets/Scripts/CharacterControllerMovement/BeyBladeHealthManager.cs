@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class BeyBladeHealthManager : MonoBehaviour
 {
-    public delegate void HealthChangeHandler(float _currentHealth, float _maxHealth, GameObject _beyBladeObject);
-    public static event HealthChangeHandler OnHealthChanged;
+   
     [SerializeField]
-    private float maxHealth;
+    private FloatReference maxHealth;
     [SerializeField]
     private BeyBladeValues beyBladeValues;
     [SerializeField][Tooltip("The constant tat gets multiplied to damage value")]
@@ -16,39 +15,27 @@ public class BeyBladeHealthManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The constant tat gets multiplied to stamina value")]
     private float staminaConstant;
-    private float m_currentHealth;
-    public float CurrentHealth{ get => m_currentHealth; }
-    private float CurrentHealth_Private 
-    {
-        get => m_currentHealth;
-        set 
-        {
-            if (value >= maxHealth)
-                m_currentHealth = maxHealth;
-            else if (value <= 0f)
-                m_currentHealth = 0f;
-            else
-                m_currentHealth = value;
-            OnHealthChanged?.Invoke(m_currentHealth, maxHealth,gameObject);
-        }
-    }
+    [SerializeField]
+    private FloatVariable currentHealth;
+    [SerializeField]
+    private GameEvent gameEvent;
 
     private void Awake()
     {
-        CollisionManager.OnBeyBladesCollided += HandleHealthAfterCollision;
-        CurrentHealth_Private = maxHealth;
+        CollisionManager.OnBeyBladesCollidedNormally += HandleHealthAfterCollision;
+        currentHealth.Value = maxHealth.Value;
     }
 
     private void OnDisable()
     {
-        CollisionManager.OnBeyBladesCollided -= HandleHealthAfterCollision;
+        CollisionManager.OnBeyBladesCollidedNormally -= HandleHealthAfterCollision;
     }
 
     private void Update()
     {
-        CurrentHealth_Private += beyBladeValues.StaminaValue * Time.deltaTime * staminaConstant;
+        currentHealth.Value += beyBladeValues.StaminaValue * Time.deltaTime * staminaConstant;
     }
-    private  void HandleHealthAfterCollision(BeyBladeCollision _Collision)
+    private  void HandleHealthAfterCollision(INormalCollision _Collision)
     {
         if (_Collision.IsAttacker(gameObject) == false && _Collision.IsVictim(gameObject) == false)
         {
@@ -64,7 +51,7 @@ public class BeyBladeHealthManager : MonoBehaviour
             }
 
             float _dmg = CalculateDamageWhileDefending(_Collision.CollisionIndex, _attacker);
-            CurrentHealth_Private -= _dmg;
+            currentHealth.Value -= _dmg;
 
         }
         else if (_Collision.IsAttacker(gameObject))
@@ -75,8 +62,9 @@ public class BeyBladeHealthManager : MonoBehaviour
                 return;
             }
             float _dmg = CalculateDamageWhileAttacking(_Collision.CollisionIndex, _victim);
-            CurrentHealth_Private -= _dmg;
+            currentHealth.Value -= _dmg;
         }
+        gameEvent.Raise();
     }
 
     private float CalculateDamageWhileAttacking(float _collisionIndex, GameObject _victim)

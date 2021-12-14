@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BeyBladeModeAvailabilityManager : MonoBehaviour
 {
-    public delegate void PostCollisionModeAvailabilityHandler(string _uID, GameObject _gameObject,BeyBladeCollision _collision);
+    public delegate void PostCollisionModeAvailabilityHandler(string _uID, GameObject _gameObject,INormalCollision _collision);
     public static event PostCollisionModeAvailabilityHandler OnCollided;
     [SerializeField]
     protected float maxHealth;
@@ -12,15 +13,17 @@ public class BeyBladeModeAvailabilityManager : MonoBehaviour
 
     private void Awake()
     {
-        CollisionManager.OnBeyBladesCollided += HandleModeAvailabilityAfterCollision;
+        CollisionManager.OnBeyBladesCollidedNormally += HandleModeAvailabilityAfterCollision;
     }
 
     private void OnDisable()
     {
-        CollisionManager.OnBeyBladesCollided -= HandleModeAvailabilityAfterCollision;
+        CollisionManager.OnBeyBladesCollidedNormally -= HandleModeAvailabilityAfterCollision;
     }
 
-    private void HandleModeAvailabilityAfterCollision(BeyBladeCollision _Collision)
+ 
+
+    private void HandleModeAvailabilityAfterCollision(INormalCollision _Collision)
     {
         if (_Collision.IsAttacker(gameObject) == false && _Collision.IsVictim(gameObject) == false)
         {
@@ -29,6 +32,7 @@ public class BeyBladeModeAvailabilityManager : MonoBehaviour
         }
         OnCollided?.Invoke(gameObject.GetComponent<BeyBladeTag>().UID, this.gameObject, _Collision);
     }
+  
 
 }
 

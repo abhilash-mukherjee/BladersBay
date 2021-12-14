@@ -10,6 +10,8 @@ public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandle
     private float maxDistanceOfRay = 100f;
     [SerializeField]
     private float minimumDistanceBetweenHitPointAndBeyBladeToAllowMovement = 0.05f;
+    [SerializeField]
+    private GameEvent LeftSwipeEvent, RightSwipeEvent, UpSwipeEvent, DownSwipeEvent;
     private bool m_isMoving = false;
 
     private void Awake()
@@ -62,20 +64,21 @@ public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandle
     }
     public void OnSwipeLeft(SwipeEventData eventData, float value)
     {
-        GoToDefenceMode();
+        LeftSwipeEvent.Raise();
     }
 
     public void OnSwipeRight(SwipeEventData eventData, float value)
     {
-        GoToAttackMode();
+        RightSwipeEvent.Raise();
     }
     public void OnSwipeUp(SwipeEventData eventData, float value)
     {
-        GoToBalanceMode();
+        UpSwipeEvent.Raise();
     }
 
     public void OnSwipeDown(SwipeEventData eventData, float value)
     {
+        DownSwipeEvent.Raise();
     }
 
     public void OnSwipeStarted(SwipeEventData eventData)

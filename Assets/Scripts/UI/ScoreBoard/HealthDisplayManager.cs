@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class HealthDisplayManager : MonoBehaviour
 {
     [SerializeField]
@@ -12,30 +11,26 @@ public class HealthDisplayManager : MonoBehaviour
     private float healthBarAnimationThreshold;
     [SerializeField]
     private string m_tag;
+    [SerializeField]
+    FloatReference maxHealth;
+    [SerializeField]
+    FloatVariable currentHealth;
     GameObject m_beyBlade;
     private bool m_shouldAnimateHealthBar;
     private float m_targetFill = 1f;
 
     public string Tag { get => m_tag; }
 
-    private void OnEnable()
-    {
-        BeyBladeHealthManager.OnHealthChanged += UpdateHealth;
-    }
 
-    private void UpdateHealth(float _currentHealth, float _maxHealth, GameObject _beyBlade)
+    public void UpdateHealth()
     {
-        if (m_beyBlade == null) return;
-        if(m_beyBlade == _beyBlade)
+        m_targetFill = currentHealth.Value / maxHealth.Value;
+        if (Mathf.Abs(m_targetFill - healthSprite.fillAmount) <= healthBarAnimationThreshold)
         {
-            m_targetFill = _currentHealth/_maxHealth;
-            if(Mathf.Abs(m_targetFill - healthSprite.fillAmount) <= healthBarAnimationThreshold)
-            {
-                healthSprite.fillAmount = m_targetFill;
-                return;
-            }
-            m_shouldAnimateHealthBar = true;
+            healthSprite.fillAmount = m_targetFill;
+            return;
         }
+        m_shouldAnimateHealthBar = true;
     }
     private void Update()
     {
@@ -49,12 +44,7 @@ public class HealthDisplayManager : MonoBehaviour
             healthSprite.fillAmount -= Time.deltaTime * lerpSpeed;
         }
     }
-    private void OnDisable()
-    {
-        
-        BeyBladeHealthManager.OnHealthChanged -= UpdateHealth;
-    }
-
+   
     public void SetBeyBlade(GameObject _beyBladeObject)
     {
         m_beyBlade = _beyBladeObject;

@@ -17,17 +17,17 @@ public class HeadOnCollisionType : BeyBladeCollisionType
         }
         else return false;
     }
-    public override List<CollidingBeyBlade> GetAttacker(BeyBladeCollision _collision)
+    public override List<ICollidingBeyBlade> GetAttacker(BeyBladeCollision _collision)
     {
-        var _AttackerList = new List<CollidingBeyBlade>();
+        var _AttackerList = new List<ICollidingBeyBlade>();
         _AttackerList.Add(_collision.BeyBlade1);
         _AttackerList.Add(_collision.BeyBlade2);
         return _AttackerList;
     }
 
-    public override List<CollidingBeyBlade> GetVictim(BeyBladeCollision _collision)
+    public override List<ICollidingBeyBlade> GetVictim(BeyBladeCollision _collision)
     {
-        var _victimList = new List<CollidingBeyBlade>();
+        var _victimList = new List<ICollidingBeyBlade>();
         _victimList.Add(_collision.BeyBlade1);
         _victimList.Add(_collision.BeyBlade2);
         return _victimList;

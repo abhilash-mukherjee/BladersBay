@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1291d4263e79e854d8487bcb70a3399d, type: 3}
+  m_Name: Player Balance State Values
+  m_EditorClassIdentifier: 
+  modeName: {fileID: 11400000, guid: 5402a096736dcb347a525d1058419bf1, type: 2}
+  attackValue: 0.504
+  defenceValue: 0
+  staminaValue: 0
+  damageValue: 0.324
+  speed: 1.3
