@@ -4,13 +4,13 @@ using UnityEngine;
 public class BeyBladeValues: MonoBehaviour
 {
     [SerializeField]
-    private StateValues[] stateValueList;
+    private StateData[] stateValueList;
     public float AttackValue { get => m_currentState.AttackValue; }
     public float DefenceValue { get => m_currentState.DefenceValue;  }
     public float StaminaValue { get => m_currentState.StaminaValue;  }
     public float DamageValue { get => m_currentState.DamageValue; }
     public float Speed { get => m_currentState.Speed;  }
-    private StateValues m_currentState;
+    private StateData m_currentState;
     private void Awake()
     {
         m_currentState = stateValueList[0];

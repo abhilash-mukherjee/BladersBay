@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public abstract class StateAvailabilityDecission : MonoBehaviour
+public abstract class StateAvailabilityDecission : ScriptableObject
 {
-    public abstract bool Decide(StateAvailabilityController _stateAvailabilityController);
+    public abstract bool Decide(StateController _stateController, State _state);
 }

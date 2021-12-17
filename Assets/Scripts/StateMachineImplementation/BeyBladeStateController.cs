@@ -8,17 +8,19 @@ public class BeyBladeStateController : MonoBehaviour
     public delegate void ModeChangeHandler(BeyBladeStateName _currentModeName, GameObject _gameObject);
     public static event ModeChangeHandler OnBeyBladeStateChanged;
     [SerializeField]
-    private BeyBladeState startingState;
+    private StateBehaviour startingState;
     [SerializeField]
     private BeyBladeValues beyBladeValues;
     [SerializeField]
     private List<StateEffectContainer> modeEffects = new List<StateEffectContainer>();
+    [SerializeField]
+    private BeyBladeStateAvailabilityEnum Available, UnAvailable, Activated;
     private BeyBladeStateName m_currentStateRequest;
-    private BeyBladeState m_currentState;
+    private StateBehaviour m_currentState;
 
     public BeyBladeStateName CurrentStateRequest { get => m_currentStateRequest; }
     public List<StateEffectContainer> ModeEffects { get => modeEffects; }
-    public BeyBladeState CurrentState
+    public StateBehaviour CurrentState
     {
         get
         {
@@ -36,29 +38,7 @@ public class BeyBladeStateController : MonoBehaviour
     }
     private void Update()
     {
-        if (m_currentState != null)
-        {
-            m_currentState.UpdateState(this);
-            //Debug.Log(m_currentState);
-        }
-    }
-    public void TransitionToState(BeyBladeState _state)
-    {
-        if (false)
-        {
-            Debug.Log("State unavailable");
-            return;
-        }
-        if (m_currentState != _state)
-        {
-            // Debug.Log("Transitioned to " + _state + " from " + m_currentState);
-            m_currentState = _state;
-            OnBeyBladeStateChanged?.Invoke(m_currentState.StateName, gameObject);
-        }
-        else
-        {
-            //Debug.Log($"Already in {m_currentState}");
-        }
+        
     }
     private void OnDrawGizmos()
     {

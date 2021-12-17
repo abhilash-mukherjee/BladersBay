@@ -11,7 +11,6 @@ public class CollisionMovementManagerWithCharacterController : MovementManagerWi
     {
         m_characterController = GetComponent<CharacterController>();
         m_velocity = collisionPhysicsManager.InitialVelocityAfterCollision;
-        Debug.Log($"Initial velocity after collision for {gameObject} = {m_velocity}");
     }
     protected override void Awake()
     {

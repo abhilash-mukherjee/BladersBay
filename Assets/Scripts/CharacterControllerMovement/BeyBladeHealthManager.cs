@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(StateController))]
 public class BeyBladeHealthManager : MonoBehaviour
 {
-   
+    public delegate void AttackManager(StateController _stateController, float _collisionIndex);
+    public static event AttackManager OnBeyBladeAttacked;
+    [SerializeField]
+    private StateController stateController;
     [SerializeField]
     private FloatReference maxHealth;
-    [SerializeField]
-    private BeyBladeValues beyBladeValues;
     [SerializeField][Tooltip("The constant tat gets multiplied to damage value")]
     [Range(0f,10f)]
     private float damageConstant = 5f;
@@ -33,7 +34,7 @@ public class BeyBladeHealthManager : MonoBehaviour
 
     private void Update()
     {
-        currentHealth.Value += beyBladeValues.StaminaValue * Time.deltaTime * staminaConstant;
+        currentHealth.Value += stateController.CurrentState.Data.StaminaValue * Time.deltaTime * staminaConstant;
     }
     private  void HandleHealthAfterCollision(INormalCollision _Collision)
     {
@@ -61,21 +62,27 @@ public class BeyBladeHealthManager : MonoBehaviour
             {
                 return;
             }
+            RaiseAttackEvent(_Collision.CollisionIndex);
             float _dmg = CalculateDamageWhileAttacking(_Collision.CollisionIndex, _victim);
             currentHealth.Value -= _dmg;
         }
         gameEvent.Raise();
     }
 
+    private void RaiseAttackEvent(float collisionIndex)
+    {
+        OnBeyBladeAttacked?.Invoke(stateController,collisionIndex);
+    }
+
     private float CalculateDamageWhileAttacking(float _collisionIndex, GameObject _victim)
     {
-        float _dmg = damageConstant * _victim.GetComponent<BeyBladeValues>().DefenceValue * beyBladeValues.DamageValue * _collisionIndex;
+        float _dmg = damageConstant * _victim.GetComponent<StateController>().CurrentState.Data.DefenceValue * stateController.CurrentState.Data.DamageValue * _collisionIndex;
         return _dmg;
     }
 
     private float CalculateDamageWhileDefending(float _collisionIndex, GameObject _attacker)
     {
-        float _dmg = damageConstant * _attacker.GetComponent<BeyBladeValues>().AttackValue * beyBladeValues.DamageValue * _collisionIndex;
+        float _dmg = damageConstant * _attacker.GetComponent<StateController>().CurrentState.Data.AttackValue * stateController.CurrentState.Data.DamageValue * _collisionIndex;
         return _dmg;
     }
 
