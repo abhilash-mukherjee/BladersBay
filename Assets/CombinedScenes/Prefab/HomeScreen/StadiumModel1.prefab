@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 733929780710433439}
   - component: {fileID: 100382747257944102}
+  - component: {fileID: 391724851}
   m_Layer: 0
   m_Name: StadiumModel1
   m_TagString: Untagged
@@ -53,6 +54,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 90
+--- !u!114 &391724851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100382747257944101}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e303ca8da9fd514a80d17347589445a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: -0.78, z: 0}
+  endf: 0
+  speed: 10
+  isY: 1
 --- !u!1 &998123879384317517
 GameObject:
   m_ObjectHideFlags: 0
