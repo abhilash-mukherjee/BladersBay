@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf60b24b06c401a4b85fdd2d7872e6f6, type: 2}
+  - {fileID: 2100000, guid: 04c75daeed90d234ca93bf16ce0cfe23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,6 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8145213217017847092}
+  - component: {fileID: 1255924976}
   m_Layer: 0
   m_Name: TextParent
   m_TagString: Untagged
@@ -226,6 +227,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255924976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145213217017847093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6004ff591ffa54ca29a8f834e5cf04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {x: 0, y: 0.184, z: 2.3059}
+  end: {x: 0, y: 0.834, z: 2.3059}
+  isScale: 0
+  timeElapsed: 0
 --- !u!1001 &8145213217342737001
 PrefabInstance:
   m_ObjectHideFlags: 0
