@@ -4,5 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Float Variable", menuName = "Variables/float")]
 public class FloatVariable : ScriptableObject
 {
-    public float Value;
+    [SerializeField]
+    private float floatValue;
+    public virtual float Value { get => floatValue; set => this.floatValue = value; }
 }

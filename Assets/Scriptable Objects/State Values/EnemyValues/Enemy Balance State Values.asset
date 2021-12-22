@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Enemy Balance State Values
   m_EditorClassIdentifier: 
   stateName: {fileID: 11400000, guid: 5402a096736dcb347a525d1058419bf1, type: 2}
-  attackValue: 0.504
-  defenceValue: 0
-  staminaValue: 0
-  damageValue: 0.324
-  speed: 1.3
-  stateReplenishmentRate: 0
-  stateDepletionRate: 0
-  startingStateAvailabiltyIndx: 0
-  thresholdStateAvailabiltyIndex: 0
-  minimumStateAvailabiltyIndex: -1
+  isLocked: {fileID: 11400000, guid: e2ef0347ca4dd9c41ad1a8c5cb294670, type: 2}
+  attackValue: {fileID: 11400000, guid: 38820b91170401d4383c163c88e99b17, type: 2}
+  defenceValue: {fileID: 11400000, guid: 0a87c689208ca7c44ac4ce580c527d7b, type: 2}
+  staminaValue: {fileID: 11400000, guid: fc5b9cc39dab3fc4483fc8733af8c0ac, type: 2}
+  damageValue: {fileID: 11400000, guid: 2646daca8ca3d1f4eb3f29e6e4ab7708, type: 2}
+  speed: {fileID: 11400000, guid: 64834b41ff634c9428dd570712747194, type: 2}
+  stateReplenishmentRate: {fileID: 11400000, guid: 0231357d7291f7d4cb5e7b92adfe6d5e, type: 2}
+  stateDepletionRate: {fileID: 11400000, guid: 6a7dc14eeb80d554fadff49deaebcb3f, type: 2}
+  startingStateAvailabiltyIndx: {fileID: 11400000, guid: 486a345975dbe77498775c49f90211eb, type: 2}
+  thresholdStateAvailabiltyIndex: {fileID: 11400000, guid: b53a8789b766ec64b845026fa9f4ca66, type: 2}
+  minimumStateAvailabiltyIndex: {fileID: 11400000, guid: 905d0afd111943940abe827dd091fd12, type: 2}

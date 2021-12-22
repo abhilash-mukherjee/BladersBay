@@ -4,8 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(StateController))]
 public class BeyBladeHealthManager : MonoBehaviour
 {
-    public delegate void AttackManager(StateController _stateController, float _collisionIndex);
-    public static event AttackManager OnBeyBladeAttacked;
+    public delegate void ImpactMAnager(StateController _stateController, float _collisionIndex);
+    public delegate void BattleEndManager(GameObject _gameObject);
+    public static event ImpactMAnager OnBeyBladeAttacked, OnBeyBladeDamaged, OnBeyBladeCollided;
+    public static event BattleEndManager OnBattleEnd;
     [SerializeField]
     private StateController stateController;
     [SerializeField]
@@ -18,13 +20,28 @@ public class BeyBladeHealthManager : MonoBehaviour
     private float staminaConstant;
     [SerializeField]
     private FloatVariable currentHealth;
-    [SerializeField]
-    private GameEvent gameEvent;
+    private float m_CurrentHealth { get => currentHealth.Value; 
+        set 
+        {
+            if (value <= 0f)
+            {
+                currentHealth.Value =  0.001f;
+                OnBattleEnd?.Invoke(gameObject);
+            }
+            else if (value >= maxHealth.Value)
+            {
+                Debug.Log("Max health achieved");
+                currentHealth.Value = maxHealth.Value;
+            }
+            else
+                currentHealth.Value = value; 
+        }
+    }
 
     private void Awake()
     {
         CollisionManager.OnBeyBladesCollidedNormally += HandleHealthAfterCollision;
-        currentHealth.Value = maxHealth.Value;
+        m_CurrentHealth = maxHealth.Value;
     }
 
     private void OnDisable()
@@ -34,7 +51,7 @@ public class BeyBladeHealthManager : MonoBehaviour
 
     private void Update()
     {
-        currentHealth.Value += stateController.CurrentState.Data.StaminaValue * Time.deltaTime * staminaConstant;
+        m_CurrentHealth += stateController.CurrentState.Data.StaminaValue * Time.deltaTime * staminaConstant;
     }
     private  void HandleHealthAfterCollision(INormalCollision _Collision)
     {
@@ -50,9 +67,9 @@ public class BeyBladeHealthManager : MonoBehaviour
             {
                 return;
             }
-
+            RaiseDefenceEvent(_Collision.CollisionIndex);
             float _dmg = CalculateDamageWhileDefending(_Collision.CollisionIndex, _attacker);
-            currentHealth.Value -= _dmg;
+            m_CurrentHealth -= _dmg;
 
         }
         else if (_Collision.IsAttacker(gameObject))
@@ -64,14 +81,23 @@ public class BeyBladeHealthManager : MonoBehaviour
             }
             RaiseAttackEvent(_Collision.CollisionIndex);
             float _dmg = CalculateDamageWhileAttacking(_Collision.CollisionIndex, _victim);
-            currentHealth.Value -= _dmg;
+            m_CurrentHealth -= _dmg;
         }
-        gameEvent.Raise();
+        RaiseCollisionEvent(_Collision.CollisionIndex);
+        
     }
 
     private void RaiseAttackEvent(float collisionIndex)
     {
         OnBeyBladeAttacked?.Invoke(stateController,collisionIndex);
+    }
+    private void RaiseDefenceEvent(float collisionIndex)
+    {
+        OnBeyBladeDamaged?.Invoke(stateController,collisionIndex);
+    }
+    private void RaiseCollisionEvent(float collisionIndex)
+    {
+        OnBeyBladeCollided?.Invoke(stateController,collisionIndex);
     }
 
     private float CalculateDamageWhileAttacking(float _collisionIndex, GameObject _victim)
@@ -84,6 +110,13 @@ public class BeyBladeHealthManager : MonoBehaviour
     {
         float _dmg = damageConstant * _attacker.GetComponent<StateController>().CurrentState.Data.AttackValue * stateController.CurrentState.Data.DamageValue * _collisionIndex;
         return _dmg;
+    }
+
+    public bool HasDied()
+    {
+        if (m_CurrentHealth <= Mathf.Epsilon)
+            return true;
+        else return false;
     }
 
 }

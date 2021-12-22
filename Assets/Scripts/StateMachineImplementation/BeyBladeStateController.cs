@@ -10,7 +10,7 @@ public class BeyBladeStateController : MonoBehaviour
     [SerializeField]
     private StateBehaviour startingState;
     [SerializeField]
-    private BeyBladeValues beyBladeValues;
+    private StateData beyBladeValues;
     [SerializeField]
     private List<StateEffectContainer> modeEffects = new List<StateEffectContainer>();
     [SerializeField]

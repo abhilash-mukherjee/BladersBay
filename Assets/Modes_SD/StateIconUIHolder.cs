@@ -18,6 +18,8 @@ public class StateIconUIHolder : MonoBehaviour
     [SerializeField]
     [Range(0f, 10f)]
     private float coroutineTime;
+    [SerializeField]
+    private Color inActiveColor, activeColor;
     private bool isCharged = false;
     private bool isCoroutineCalled = false;
     private void Update()
@@ -32,19 +34,22 @@ public class StateIconUIHolder : MonoBehaviour
     }
     public void DisplayUI()
     {
-        if (loader.fillAmount >= 1f)
+        if (StateData.CurrentAvailabilityIndex / StateData.ThresholdStateAvailabiltyIndex  >= 1f)
         {
+            loader.fillAmount = 1f;
             if (isCoroutineCalled || isCharged)
                 return;
             isCharged = true;
             isCoroutineCalled = true;
             StartCoroutine(TransitionEffect(transitionEffect));
-            logo.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+            logo.GetComponent<Image>().color = activeColor;
         }
         else
         {
             isCharged = false;
             loader.fillAmount = StateData.CurrentAvailabilityIndex / StateData.ThresholdStateAvailabiltyIndex;
+            logo.GetComponent<Image>().color = inActiveColor;
+
         }
     }
 

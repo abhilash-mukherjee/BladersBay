@@ -6,9 +6,7 @@ public class ReduceStateAvailabilityWithTime : StateAvailabilityAction
 {
     public override void Act(StateController _stateController, State _currentState)
     {
-        foreach (var _dictState in _stateController.StateDict)
-        {
-            _dictState.Value.Data.CurrentAvailabilityIndex -= _dictState.Value.Data.StateDepletionRate;
-        }
+
+        _currentState.Data.CurrentAvailabilityIndex -= _currentState.Data.StateDepletionRate;
     }
 }

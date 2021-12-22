@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Update State Avalability After Attacking", menuName = "State Availability / Action / Update State Availability After Collision")]
+[CreateAssetMenu(fileName = "new Update State Avalability After Attacking", menuName = "State Availability / Action / Update State Availability After Attacking")]
 public class UpdateStateAvalabilityAfterAttacking : StateAvailabilityAction
 {
     private List<ColisionData> m_collisionDataList = new List<ColisionData>();
     [SerializeField]
     private BeyBladeStateAvailabilityEnum UnAvailable;
+    [SerializeField]
+    private BeyBladeStateName BalanceStateName;
+    [SerializeField]
+    private BeyBladeStateName AttackStateName;
 
     private void OnEnable()
     {
@@ -28,7 +32,8 @@ public class UpdateStateAvalabilityAfterAttacking : StateAvailabilityAction
         {
             foreach(var _dictState in _stateController.StateDict)
             {
-                _dictState.Value.Data.CurrentAvailabilityIndex += _dataFromList.CollisionIndex * _dictState.Value.Data.StateReplenishmentRate;
+                if (_dictState.Value.Data.StateName == AttackStateName)
+                    _dictState.Value.Data.CurrentAvailabilityIndex += _dataFromList.CollisionIndex * _dictState.Value.Data.StateReplenishmentRate;
             }
             m_collisionDataList.Remove(_dataFromList);
         }
@@ -36,6 +41,10 @@ public class UpdateStateAvalabilityAfterAttacking : StateAvailabilityAction
 
     public void OnAttacked(StateController _stateController, float _collisionIndex)
     {
+        if (_stateController.CurrentState.Name != BalanceStateName)
+        {
+            return;
+        }
         var _Data = new ColisionData(_stateController, _stateController.CurrentState.Name, _collisionIndex);
         var _dataFromList = m_collisionDataList.Find(p => p.stateController == _Data.stateController);
         if (_dataFromList == null)

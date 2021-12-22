@@ -8,7 +8,7 @@ public class BeyBladeModeAvailabilityManager : MonoBehaviour
     [SerializeField]
     protected float maxHealth;
     [SerializeField]
-    protected BeyBladeValues beyBladeValues;
+    protected StateData beyBladeValues;
 
 
     private void Awake()

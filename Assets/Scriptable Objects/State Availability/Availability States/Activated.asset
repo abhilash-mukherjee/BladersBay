@@ -15,6 +15,7 @@ MonoBehaviour:
   m_name: {fileID: 11400000, guid: d068bc0de2d415248a37391072c90504, type: 2}
   stateAvailabilityActions:
   - {fileID: 11400000, guid: 3317cc392fcd0074cb546980f58e3752, type: 2}
+  - {fileID: 11400000, guid: 3af83e3a8046daf4187390d5cdae8045, type: 2}
   stateAvailabilityTransitions:
   - decissions:
     - {fileID: 11400000, guid: ccc73abf43e0c4348aef6762c3b30fa1, type: 2}

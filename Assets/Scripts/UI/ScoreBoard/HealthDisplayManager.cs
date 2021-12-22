@@ -22,7 +22,7 @@ public class HealthDisplayManager : MonoBehaviour
     public string Tag { get => m_tag; }
 
 
-    public void UpdateHealth()
+    private void UpdateHealth()
     {
         m_targetFill = currentHealth.Value / maxHealth.Value;
         if (Mathf.Abs(m_targetFill - healthSprite.fillAmount) <= healthBarAnimationThreshold)
@@ -34,6 +34,7 @@ public class HealthDisplayManager : MonoBehaviour
     }
     private void Update()
     {
+        UpdateHealth();
         if(m_shouldAnimateHealthBar)
         {
             if (healthSprite.fillAmount <= m_targetFill)

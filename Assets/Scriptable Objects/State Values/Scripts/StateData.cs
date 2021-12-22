@@ -7,39 +7,33 @@ public class StateData : ScriptableObject
     [SerializeField]
     private BeyBladeStateName stateName;
     [SerializeField]
-    private bool isLocked;
+    private BoolVariable isLocked;
     [SerializeField]
-    [Range(0, 1)]
-    protected float attackValue;
+    protected FloatVariable attackValue;
     [SerializeField]
-    [Range(0, 1)]
-    protected float defenceValue;
+    protected FloatVariable defenceValue;
     [SerializeField]
-    [Range(0, 1)]
-    protected float staminaValue;
+    protected FloatVariable staminaValue;
     [SerializeField]
-    [Range(0, 1)]
-    protected float damageValue;
+    protected FloatVariable damageValue;
     [SerializeField]
-    protected float speed;
+    protected FloatVariable speed;
     [SerializeField]
-    [Range(0f, 1f)]
-    private float stateReplenishmentRate;
+    private FloatVariable stateReplenishmentRate;
     [SerializeField]
-    [Range(0f, 0.001f)]
-    private float stateDepletionRate;
+    private FloatVariable stateDepletionRate;
     [SerializeField]
-    private float startingStateAvailabiltyIndx, thresholdStateAvailabiltyIndex, minimumStateAvailabiltyIndex;
+    private FloatVariable startingStateAvailabiltyIndx, thresholdStateAvailabiltyIndex, minimumStateAvailabiltyIndex;
 
     private float m_currentAvailabilityIndex;
 
-    public float StateReplenishmentRate { get => stateReplenishmentRate; }
-    public float StateDepletionRate { get => stateDepletionRate; }
-    public float AttackValue { get => attackValue; }
-    public float DefenceValue { get => defenceValue; }
-    public float StaminaValue { get => staminaValue; }
-    public float DamageValue { get => damageValue; }
-    public float Speed { get => speed; }
+    public float StateReplenishmentRate { get => stateReplenishmentRate.Value; }
+    public float StateDepletionRate { get => stateDepletionRate.Value; }
+    public float AttackValue { get => attackValue.Value; }
+    public float DefenceValue { get => defenceValue.Value; }
+    public float StaminaValue { get => staminaValue.Value; }
+    public float DamageValue { get => damageValue.Value; }
+    public float Speed { get => speed.Value; }
     public BeyBladeStateName StateName { get => stateName; }
     public float CurrentAvailabilityIndex 
     { 
@@ -51,21 +45,26 @@ public class StateData : ScriptableObject
                 m_currentAvailabilityIndex = 0f; 
                 return; 
             }
-            else if (value >= thresholdStateAvailabiltyIndex) 
+            else if (value >= thresholdStateAvailabiltyIndex.Value) 
             { 
-                m_currentAvailabilityIndex = thresholdStateAvailabiltyIndex; 
+                m_currentAvailabilityIndex = thresholdStateAvailabiltyIndex.Value; 
                 return; 
             }
             m_currentAvailabilityIndex = value;
         }
     }
-    public float ThresholdStateAvailabiltyIndex { get => thresholdStateAvailabiltyIndex;  }
-    public float MinimumStateAvailabiltyIndex { get => minimumStateAvailabiltyIndex; }
-    public bool IsLocked { get => isLocked; set => isLocked = value; }
+    public float ThresholdStateAvailabiltyIndex { get => thresholdStateAvailabiltyIndex.Value;  }
+    public float MinimumStateAvailabiltyIndex { get => minimumStateAvailabiltyIndex.Value; }
+    public bool IsLocked { get => isLocked.Value; set => isLocked.Value = value; }
 
     private void OnEnable()
     {
-        m_currentAvailabilityIndex = startingStateAvailabiltyIndx;
+        m_currentAvailabilityIndex = startingStateAvailabiltyIndx.Value;
+    }
+    
+    private void OnDisable()
+    {
+        m_currentAvailabilityIndex = startingStateAvailabiltyIndx.Value;
     }
 
     

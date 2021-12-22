@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public class ParabolaController : MonoBehaviour
 {
+    public delegate void ParabolaReachDestinationHandler();
+    public static event ParabolaReachDestinationHandler OnParabolaReachedDestination;
+    [SerializeField]
+    private GameObject spiritPrefab;
     /// <summary>
     /// Animation Speed
     /// </summary>
@@ -12,7 +16,7 @@ public class ParabolaController : MonoBehaviour
     /// <summary>
     /// Start of Parabola
     /// </summary>
-    public GameObject start,end, mid;
+    public GameObject mid;
    
     [Range(0,0.5f)]
     public float height;
@@ -25,7 +29,7 @@ public class ParabolaController : MonoBehaviour
     /// <summary>
     /// Animate
     /// </summary>
-    public bool Animation = true;
+    private bool animation1 = true;
 
     //next parabola event
     internal bool nextParbola = false;
@@ -38,51 +42,50 @@ public class ParabolaController : MonoBehaviour
 
     //draw
     protected ParabolaFly parabolaFly;
+    private bool m_isEventRecieved = false;
+    private GameObject m_start,m_end;
+    private bool m_spiritHasReachedDestination = false;
+    public bool Animation { get => animation1; set => animation1 = value; }
 
-    void OnDrawGizmos()
+    private void Awake()
     {
-        if (gizmo == null)
-        {
-            gizmo = new ParabolaFly(start.transform,mid.transform,end.transform);
-        }
-
-        gizmo.RefreshTransforms(1f);
-        if ((gizmo.Points.Length - 1) % 2 != 0)
-            return;
-
-        int accur = 50;
-        Vector3 prevPos = gizmo.Points[0].position;
-        for (int c = 1; c <= accur; c++)
-        {
-            float currTime = c * gizmo.GetDuration() / accur;
-            Vector3 currPos = gizmo.GetPositionAtTime(currTime);
-            float mag = (currPos - prevPos).magnitude * 2;
-            Gizmos.color = new Color(mag, 0, 0, 1);
-            Gizmos.DrawLine(prevPos, currPos);
-            Gizmos.DrawSphere(currPos, 0.01f);
-            prevPos = currPos;
-        }
+        spiritPrefab.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        BattleFinishAnimationManager.OnBeyBladesRisedAboveGround += StartParabola;
+    }
+    private void OnDisable()
+    {
+        BattleFinishAnimationManager.OnBeyBladesRisedAboveGround -= StartParabola;
+        
     }
 
-
     // Use this for initialization
-    void Start()
+    public void StartParabola( GameObject _startObject, GameObject _endObject)
     {
-        transform.position = start.transform.position;
-        Vector3 pos = new Vector3((start.transform.position.x + end.transform.position.x)/2,height,start.transform.position.z);
+        spiritPrefab.SetActive(true);
+        m_start = _startObject;
+        m_end = _endObject;
+        spiritPrefab.transform.position = m_start.transform.position;
+        Vector3 pos = new Vector3((m_start.transform.position.x + m_end.transform.position.x)/2,height,m_start.transform.position.z);
         GameObject midD = Instantiate(mid,pos,Quaternion.identity);
-        parabolaFly = new ParabolaFly(start.transform,midD.transform,end.transform);
+        parabolaFly = new ParabolaFly(m_start.transform,midD.transform,m_end.transform);
 
         if (Autostart)
         {
             RefreshTransforms(Speed);
             FollowParabola();
         }
+        m_isEventRecieved = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (m_isEventRecieved == false && m_spiritHasReachedDestination) 
+            return;
         nextParbola = false;
 
         if (Animation && parabolaFly != null && animationTime < parabolaFly.GetDuration())
@@ -93,7 +96,7 @@ public class ParabolaController : MonoBehaviour
             animationTime += Time.deltaTime;
             parabolaFly.GetParabolaIndexAtTime(animationTime, out parabolaIndexAfter);
 
-            transform.position = parabolaFly.GetPositionAtTime(animationTime);
+            spiritPrefab.transform.position = parabolaFly.GetPositionAtTime(animationTime);
 
             if (parabolaIndexBefore != parabolaIndexAfter)
                 nextParbola = true;
@@ -105,15 +108,21 @@ public class ParabolaController : MonoBehaviour
         {
             animationTime = float.MaxValue;
             Animation = false;
+            RaiseParabolaCompletedEvent();
         }
 
+    }
+
+    private void RaiseParabolaCompletedEvent()
+    {
+        OnParabolaReachedDestination?.Invoke();
     }
 
     public void FollowParabola()
     {
         RefreshTransforms(Speed);
         animationTime = 0f;
-        transform.position = parabolaFly.Points[0].position;
+        spiritPrefab.transform.position = parabolaFly.Points[0].position;
         Animation = true;
         //HighestPoint = points[0].position;
     }
