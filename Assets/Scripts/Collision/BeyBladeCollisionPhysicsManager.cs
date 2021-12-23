@@ -24,6 +24,7 @@ public class BeyBladeCollisionPhysicsManager : MonoBehaviour
 
     private void HandleCollsion(IBasicCollision _collision)
     {
+        Debug.Log("Physis calculated");
         if(_collision.CheckIfPassedGameObjectIsInvolvedInCollision(gameObject))
         {
             m_initialVelocityAfterCollision = _collision.GetVelocityAfterCollision(gameObject);

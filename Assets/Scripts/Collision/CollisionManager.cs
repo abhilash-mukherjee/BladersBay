@@ -78,7 +78,9 @@ public class CollisionManager : MonoBehaviour
             //Physics Calculation Event must be triggered prior to starting the collision phase, or else movement will lag
 
             //Physics Calculation
-            OnCollisionPhysicsCalculated?.Invoke(m_glitchyCollision);
+            if (OnCollisionPhysicsCalculated != null)
+                OnCollisionPhysicsCalculated.Invoke(m_normalCollision);
+            else Debug.Log("No recievers");
             //Start Collision Phase
             OnCollisionStarted?.Invoke(m_glitchyCollision);
             m_isCollisionGlitchPhaseOn = true;
