@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb5ae168d5a5a840a8acff7db330ad6, type: 3}
-  m_Name: BeyBlade Inventory
+  m_Name: New BeyBlade Inventory
   m_EditorClassIdentifier: 
-  beyPartSlots: []
+  inventoryPerkList:
+  - {fileID: 11400000, guid: a8ea2003bb9e86a48a2b89141b059476, type: 2}
