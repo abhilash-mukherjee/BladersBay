@@ -16,4 +16,4 @@ MonoBehaviour:
   DefenceData: {fileID: 11400000, guid: 2fbd95cd3f48bba4596f1946984ca467, type: 2}
   StaminaData: {fileID: 11400000, guid: 4b1abadb7cd4ae74498a77e38d958d2c, type: 2}
   BalanceData: {fileID: 11400000, guid: 2a4f8b1f37198744f853d2ffc693beca, type: 2}
-  Model: {fileID: 0}
+  Model: {fileID: 1709340809770954306, guid: 5e54046731cc4004897d7b9a376b9842, type: 3}

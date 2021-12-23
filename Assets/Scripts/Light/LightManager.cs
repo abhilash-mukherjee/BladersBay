@@ -48,6 +48,8 @@ public class LightManager : MonoBehaviour
             return;
         foreach (var c in stateControllers)
         {
+            if (c == null)
+                continue;
             if (c.CurrentState.Name != balanceStateName)
             {
                 Light.intensity = specialModeIntensity;

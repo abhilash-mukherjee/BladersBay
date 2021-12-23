@@ -20,4 +20,4 @@ MonoBehaviour:
   - BoolVariable: {fileID: 11400000, guid: 050a597151eb03f4fa8f67d0b80d192c, type: 2}
     finalBool: 1
   - BoolVariable: {fileID: 11400000, guid: 93df0b1d139934147821007690eeaedb, type: 2}
-    finalBool: 1
+    finalBool: 0

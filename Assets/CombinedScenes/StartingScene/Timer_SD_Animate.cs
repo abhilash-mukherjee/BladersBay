@@ -6,12 +6,25 @@ using UnityEngine.UI;
 public class Timer_SD_Animate : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject timerUI, versus, lowerPart, upperPart;
+    [SerializeField] GameObject  versus,  timerImage;
+    [SerializeField] private Image lowerPart, upperPart;
+    [SerializeField] private Text timerText;
+    [SerializeField] private float versusGoneTime = 1f;
     int timer = 3;
     private float timeElapsed = 0, rate = 0;
 
-    void Start()
+    public void StartAnimationAfterEventRecieved(float _time)
     {
+        StartCoroutine(CallBattleAnimationFunction(_time));
+    }
+    IEnumerator CallBattleAnimationFunction(float _time)
+    {
+        yield return new WaitForSeconds(_time);
+        StartBattleAnimation();
+    }
+    private void StartBattleAnimation()
+    {
+
         StartCoroutine(TimerUpdateText());
         StartCoroutine(TimerUpdateSliderDesign());
     }
@@ -20,8 +33,8 @@ public class Timer_SD_Animate : MonoBehaviour
     {
         while (timer > 0)
         {
-            lowerPart.GetComponent<Image>().fillAmount = Mathf.Lerp(0, 0.5f, timeElapsed / 3);
-            upperPart.GetComponent<Image>().fillAmount = Mathf.Lerp(0, 0.5f, timeElapsed / 3);
+            lowerPart.fillAmount = Mathf.Lerp(0, 0.5f, timeElapsed / 3);
+            upperPart.fillAmount = Mathf.Lerp(0, 0.5f, timeElapsed / 3);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -31,15 +44,15 @@ public class Timer_SD_Animate : MonoBehaviour
 
     IEnumerator TimerUpdateText()
     {
+        timerImage.SetActive(true);
         while (timer > 0)
         {
-            timerUI.GetComponent<Text>().text = timer.ToString();
+            timerText.text = timer.ToString();
             yield return new WaitForSeconds(1f);
             timer--;
         }
-        timerUI.transform.parent.gameObject.SetActive(false);
-        timerUI.SetActive(false);
-        versus.gameObject.SetActive(true);
+        timerImage.SetActive(false);
+        versus.SetActive(true);
         yield return new WaitForSeconds(2f);
         // versus.gameObject.SetActive(false);
 
@@ -49,7 +62,7 @@ public class Timer_SD_Animate : MonoBehaviour
     {
         if (versus.activeSelf)
         {
-            versus.gameObject.transform.localScale = Vector3.Lerp(new Vector3(2f, 2f, 2f), new Vector3(0.3604286f, 0.3604286f, 0.3604286f), rate*4f);
+            versus.transform.localScale = Vector3.Lerp(new Vector3(2f, 2f, 2f), new Vector3(0.3604286f, 0.3604286f, 0.3604286f), rate*4f);
             rate += Time.deltaTime;
         }
     }
