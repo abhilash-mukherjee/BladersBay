@@ -11,7 +11,7 @@ public class BeyBladeCollisionPhysicsManager : MonoBehaviour
 
     public Vector3 InitialVelocityAfterCollision { get => m_initialVelocityAfterCollision; }
 
-    private void Awake()
+    private void OnEnable()
     {
         CollisionManager.OnCollisionPhysicsCalculated += HandleCollsion;
     }
@@ -24,6 +24,7 @@ public class BeyBladeCollisionPhysicsManager : MonoBehaviour
 
     private void HandleCollsion(IBasicCollision _collision)
     {
+        Debug.Log("Physics calculated");
         if(_collision.CheckIfPassedGameObjectIsInvolvedInCollision(gameObject))
         {
             m_initialVelocityAfterCollision = _collision.GetVelocityAfterCollision(gameObject);

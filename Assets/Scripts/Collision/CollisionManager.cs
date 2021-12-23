@@ -56,12 +56,16 @@ public class CollisionManager : MonoBehaviour
                 return;
             Instantiate(collisionSpark, (player1Collider.gameObject.transform.position + player2Collider.gameObject.transform.position) / 2f, Quaternion.identity);
             AudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
+            Debug.Log("After audio played");
             m_normalCollision = new BeyBladeCollision(player1Collider.gameObject, player2Collider.gameObject, collisionTypes, collisionVelocityMultiplier,
                 staticCollisionVelocityLimit, staticCollisionVelocityMultiplier);            
+            Debug.Log("After collision object instantiantiated");
             //Physics Calculation Event must be triggered prior to starting the collision phase, or else movement will lag
 
             //Physics Calculation
-            OnCollisionPhysicsCalculated?.Invoke(m_normalCollision);
+            if (OnCollisionPhysicsCalculated != null)
+                OnCollisionPhysicsCalculated.Invoke(m_normalCollision);
+            else Debug.Log("No recievers");
             OnBeyBladesCollidedNormally?.Invoke(m_normalCollision);
             //Start Collision Phase
             OnCollisionStarted?.Invoke(m_normalCollision);
@@ -74,6 +78,7 @@ public class CollisionManager : MonoBehaviour
     {
         if (Vector3.Distance(player1Collider.transform.position, player2Collider.transform.position) <= safeDistanceForGlitchFreeBehaviour)
         {
+            Debug.Log("Gltch occured");
             m_glitchyCollision = new BeyBladeCollisionGlitch(player1Collider.gameObject, player2Collider.gameObject);
             //Physics Calculation Event must be triggered prior to starting the collision phase, or else movement will lag
 

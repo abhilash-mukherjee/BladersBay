@@ -16,7 +16,7 @@ public abstract class CollisionMovementSwitchManager : MonoBehaviour
 
     public MovementManagerWithCharacterController ActiveMovementController { get => activeMovementController;}
 
-    private void Awake()
+    private void OnEnable()
     {
         CollisionManager.OnCollisionStarted += CollisionStarted;
         collisionMovementManager.enabled = false;

@@ -56,7 +56,9 @@ public class BeyBladeCollision : INormalCollision
     public virtual Vector3 GetVelocityAfterCollision(GameObject _gameObject)
     {
         if (m_beyBlade1.BeyBladeObject == _gameObject)
+        {
             return m_beyBlade1.VelocityAfterCollision * m_collisionVelocityMultiplier;
+        }
         else if (m_beyBlade2.BeyBladeObject == _gameObject)
             return m_beyBlade2.VelocityAfterCollision * m_collisionVelocityMultiplier;
         else return Vector3.zero;
