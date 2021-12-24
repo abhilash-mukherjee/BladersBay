@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloatPerkHolder_IncrementedWithPercentage : FloatPerkHolder
 {
     [SerializeField]
-    private List<FloatPerk_IncrementedWithAmount> floatPerks_IncrementedWithPercentage = new List<FloatPerk_IncrementedWithAmount>();
+    private List<FloatPerk_IncrementedWithPercentage> floatPerks_IncrementedWithPercentage = new List<FloatPerk_IncrementedWithPercentage>();
     public override void RedeemAllPerks()
     {
         foreach (var _perk in floatPerks_IncrementedWithPercentage)

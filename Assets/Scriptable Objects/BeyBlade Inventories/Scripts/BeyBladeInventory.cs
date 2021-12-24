@@ -20,6 +20,12 @@ public class BeyBladeInventory : ScriptableObject
             inventoryPerkList.Add(_perk);
         }
     }
+    public void RemovePerkFromInventory(FloatPerkHolder_IncrementedWithPercentage _perkHolder)
+    {
+        if (!inventoryPerkList.Contains(_perkHolder))
+            return;
+        inventoryPerkList.Remove(_perkHolder);
+    }
 }
 
 

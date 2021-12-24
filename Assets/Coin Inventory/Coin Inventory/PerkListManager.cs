@@ -8,15 +8,15 @@ public class PerkListManager : MonoBehaviour
     BeyBladeInventory inventory;
     [SerializeField]
     private TransitionManager_SD transitionManager;
-    private List<PerkHolder> inventoryPerks = new List<PerkHolder>();
+    private Dictionary<GameObject, PerkHolder> gameObjectPerkMapping = new Dictionary<GameObject, PerkHolder>();
     private void Start()
     {
         foreach(var _perk in inventory.InventoryPerkList)
         {
-            Instantiate(_perk.perkPrefab, transform);
-            inventoryPerks.Add(_perk);
-            var _card = _perk.perkPrefab.GetComponent<TransitionCard_SD>();
+            var _perkPrefab = Instantiate(_perk.perkPrefab, transform);
+            var _card = _perkPrefab.GetComponent<TransitionCard_SD>();
             transitionManager.AddToCardList(_card);
+            gameObjectPerkMapping.Add(_perkPrefab, _perk);
         }
     }
     private void OnEnable()
@@ -31,10 +31,9 @@ public class PerkListManager : MonoBehaviour
     public void RedeemPerk(GameObject _gameObject)
     {
         Debug.Log("Redeem Called");
-        var _perk = inventoryPerks.Find(p => p.perkPrefab == _gameObject);
-        if (_perk != null)
+        if(gameObjectPerkMapping.ContainsKey(_gameObject))
         {
-            _perk.RedeemAllPerks();
+            gameObjectPerkMapping[_gameObject].RedeemAllPerks();
         }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class TransitionManager_SD : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public List<TransitionCard_SD> cards;
-    public GameObject Perks;
+    [SerializeField]
+    private List<TransitionCard_SD> cards;
+    public GameObject PerksParent;
     
     [SerializeField]
     float diff = 287.7399f;
@@ -22,25 +22,29 @@ public class TransitionManager_SD : MonoBehaviour
     }
     public void GetIndexAndStartAnimation(GameObject gameObj)
     {
+        Debug.Log("Inside Animation start  function");
+
         int len = cards.Count;
         foreach(TransitionCard_SD card in cards){
             card.TimeElapsed = 0f;
         }
-        for (int i = 0; i < len; i++)
+        var _card = cards.Find(p => p.gameObject == gameObj);
+        if(_card != null)
         {
-            if (cards[i] && cards[i].gameObject == gameObj)
-            {
-                AnimateTransition(i, cards[i].gameObject);
-            }
+            var _index = cards.IndexOf(_card);
+            cards.Remove(_card);
+            Destroy(_card.gameObject);
+            AnimateTransition(_index);
+        }
+        else
+        {
+            Debug.Log($"{gameObj} does not have any card corresponding to it");
         }
     }
 
-    void AnimateTransition(int index, GameObject obj)
-    {
-        // obj.GetComponent<TransitionCard_SD>().DisableManager();
-        obj.SetActive(false);
-
-        for (int i = index + 1; i < cards.Count; i++)
+    void AnimateTransition(int index)
+    {        
+        for (int i = index ; i < cards.Count; i++)
         {
             Vector3 start = cards[i].gameObject.transform.localPosition;
             Vector3 end = cards[i].gameObject.transform.localPosition - new Vector3(diff, 0, 0);
@@ -48,7 +52,6 @@ public class TransitionManager_SD : MonoBehaviour
             StartCoroutine(AnimateCard(start, end, cards[i].gameObject));
         }
 
-        //Destroy(obj);
     }
 
 
@@ -62,7 +65,6 @@ public class TransitionManager_SD : MonoBehaviour
             start = obj.transform.localPosition;
             yield return null;
         }
-
         obj.GetComponent<TransitionCard_SD>().TimeElapsed = 0f;
     }
 
@@ -76,8 +78,6 @@ public class TransitionManager_SD : MonoBehaviour
             start = obj.transform.localPosition;
             yield return null;
         }
-
-        timeElapsed = 0f;
     }
 
     public void ChangeRightClick()
@@ -92,7 +92,7 @@ public class TransitionManager_SD : MonoBehaviour
         }
         Debug.Log(count);
         if (count < cards.Count - 4)
-            StartCoroutine(AnimateParent(Perks.transform.localPosition, Perks.transform.localPosition - new Vector3(diff, 0, 0), Perks));
+            StartCoroutine(AnimateParent(PerksParent.transform.localPosition, PerksParent.transform.localPosition - new Vector3(diff, 0, 0), PerksParent));
     }
     public void ChangeLeftClick()
     {
@@ -104,7 +104,7 @@ public class TransitionManager_SD : MonoBehaviour
         }
         Debug.Log(count);
         if (count > 0)
-            StartCoroutine(AnimateParent(Perks.transform.localPosition, Perks.transform.localPosition + new Vector3(diff, 0, 0), Perks));
+            StartCoroutine(AnimateParent(PerksParent.transform.localPosition, PerksParent.transform.localPosition + new Vector3(diff, 0, 0), PerksParent));
     }
 
     public void AddToCardList(TransitionCard_SD _card)

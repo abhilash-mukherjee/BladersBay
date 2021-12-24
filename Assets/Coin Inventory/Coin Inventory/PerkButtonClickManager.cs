@@ -9,6 +9,6 @@ public class PerkButtonClickManager : MonoBehaviour
 
     public void ButtonClicked()
     {
-        OnPerkButtonClicked(gameObject);
+        OnPerkButtonClicked?.Invoke(gameObject);
     }
 }
