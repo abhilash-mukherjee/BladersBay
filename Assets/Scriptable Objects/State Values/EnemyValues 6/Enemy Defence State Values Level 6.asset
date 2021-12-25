@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: {fileID: 11400000, guid: 9a096879bbd9d5f49a44befc9b74ac47, type: 2}
   isLocked: {fileID: 11400000, guid: 871014af74959074795cb4ad61d29a4e, type: 2}
-  attackValue: {fileID: 11400000, guid: 821778a83d962b947b2acfed0f532dc4, type: 2}
-  defenceValue: {fileID: 11400000, guid: fdd98dd32c14ae943832acfa18b6311b, type: 2}
-  staminaValue: {fileID: 11400000, guid: 75d529c2a9e46724685be7f2eab401de, type: 2}
-  damageValue: {fileID: 11400000, guid: 511e45df6241e4c45988b80e57bf70c4, type: 2}
-  speed: {fileID: 11400000, guid: 894b4767f3ba2114589ca516db2ef635, type: 2}
-  stateReplenishmentRate: {fileID: 11400000, guid: 08529476a1dfadf4b913e978aea73d11, type: 2}
-  stateDepletionRate: {fileID: 11400000, guid: 951c6970a29cad549a296a3e3e0ce166, type: 2}
-  startingStateAvailabiltyIndx: {fileID: 11400000, guid: ee1d15a2f02feb246a29b0bc7e9f4d92, type: 2}
-  thresholdStateAvailabiltyIndex: {fileID: 11400000, guid: a3961c8c048b27e45bafa7543c1d00e0, type: 2}
-  minimumStateAvailabiltyIndex: {fileID: 11400000, guid: 39962303d73e4264c9de4f578f8b3104, type: 2}
+  attackValue: {fileID: 11400000, guid: babb3a65ab983474983fd7e4a45f3b56, type: 2}
+  defenceValue: {fileID: 11400000, guid: d106f75d11027a84b9c185b7cba4cb9b, type: 2}
+  staminaValue: {fileID: 11400000, guid: 589e15fd12d126243b434714af703970, type: 2}
+  damageValue: {fileID: 11400000, guid: c12ff688737d49341a047dc48210e920, type: 2}
+  speed: {fileID: 11400000, guid: a8466c3f3e33f8843a99f51464c078cb, type: 2}
+  stateReplenishmentRate: {fileID: 11400000, guid: 46187e3be27e21b4a835537aaec95e09, type: 2}
+  stateDepletionRate: {fileID: 11400000, guid: a88f611685d195642bed9329f603392c, type: 2}
+  startingStateAvailabiltyIndx: {fileID: 11400000, guid: cc5c941aa9b5ce44ab8600fa39429f79, type: 2}
+  thresholdStateAvailabiltyIndex: {fileID: 11400000, guid: d78920c160778ce4facd77c4e6f50c40, type: 2}
+  minimumStateAvailabiltyIndex: {fileID: 11400000, guid: 72dd4117930eaff499f45c2e5c0ef28f, type: 2}
