@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class ParabolaController : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class ParabolaController : MonoBehaviour
     public static event ParabolaReachDestinationHandler OnParabolaReachedDestination;
     [SerializeField]
     private GameObject spiritPrefab;
+    [SerializeField]
+    private float spiritDeactivateTime = 2f;
+    [SerializeField]
+    private float spiritDeactivateLerSpeed = 2f;
+    [SerializeField]
+    private string parabolaReachSoundName = "Electricity";
     /// <summary>
     /// Animation Speed
     /// </summary>
@@ -45,11 +52,15 @@ public class ParabolaController : MonoBehaviour
     private bool m_isEventRecieved = false;
     private GameObject m_start,m_end;
     private bool m_spiritHasReachedDestination = false;
+    private float m_closeAnimationTimer;
+    
+
     public bool Animation { get => animation1; set => animation1 = value; }
 
     private void Awake()
     {
         spiritPrefab.SetActive(false);
+        m_closeAnimationTimer = spiritDeactivateTime;
     }
     private void OnEnable()
     {
@@ -108,13 +119,30 @@ public class ParabolaController : MonoBehaviour
         {
             animationTime = float.MaxValue;
             Animation = false;
+            StartCoroutine(DeactivateSpirit());
             RaiseParabolaCompletedEvent();
         }
 
     }
 
+    IEnumerator DeactivateSpirit()
+    {
+        while(m_closeAnimationTimer >= 0)
+        {
+            yield return new WaitForEndOfFrame();
+            m_closeAnimationTimer -= Time.deltaTime;
+            spiritPrefab.transform.localScale = Vector3.Lerp(spiritPrefab.transform.localScale, Vector3.zero, Time.deltaTime * spiritDeactivateLerSpeed);
+            StartCoroutine(DeactivateSpirit());
+        }
+        
+        spiritPrefab.SetActive(false);
+        m_closeAnimationTimer = spiritDeactivateTime;
+        yield return null;
+    }
+
     private void RaiseParabolaCompletedEvent()
     {
+        AudioManager.Instance.PlaySoundOneShot(parabolaReachSoundName);
         OnParabolaReachedDestination?.Invoke();
     }
 

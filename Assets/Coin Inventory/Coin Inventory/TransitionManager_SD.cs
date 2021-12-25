@@ -9,8 +9,13 @@ public class TransitionManager_SD : MonoBehaviour
     
     [SerializeField]
     float diff = 287.7399f;
+    [SerializeField]
+    private Vector3 firstCardPos;
     float index;
     float count = 0f;
+    [SerializeField]
+    private Vector3 startingLocalscale;
+
     private void OnEnable()
     {
         PerkButtonClickManager.OnPerkButtonClicked += GetIndexAndStartAnimation;
@@ -111,9 +116,17 @@ public class TransitionManager_SD : MonoBehaviour
     {
         if (cards.Contains(_card))
             return;
-        Debug.Log("Initial pos = " + _card.gameObject.transform.localPosition);
-        _card.gameObject.transform.localPosition = cards[cards.Count - 1].transform.localPosition + new Vector3(diff, 0f, 0f);
-        Debug.Log("final pos = " + _card.gameObject.transform.localPosition);
+        if (cards.Count == 0)
+        {
+            _card.gameObject.transform.localPosition = firstCardPos;
+        }
+        else
+        {
+            Debug.Log("Initial pos = " + _card.gameObject.transform.localPosition);
+            _card.gameObject.transform.localPosition = cards[cards.Count - 1].transform.localPosition + new Vector3(diff, 0f, 0f);
+            Debug.Log("final pos = " + _card.gameObject.transform.localPosition);
+        }
+        _card.gameObject.transform.localScale = startingLocalscale;
         cards.Add(_card);
     }
 }

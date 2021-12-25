@@ -5,12 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New BeyBlade Inventory", menuName = "Inventory")]
 public class BeyBladeInventory : ScriptableObject
 {
-    [SerializeField] 
-    private List<FloatPerkHolder_IncrementedWithPercentage> inventoryPerkList = new List<FloatPerkHolder_IncrementedWithPercentage>();
+    private List<PerkHolder> inventoryPerkList = new List<PerkHolder>();
 
-    public List<FloatPerkHolder_IncrementedWithPercentage> InventoryPerkList { get => inventoryPerkList; }
+    public List<PerkHolder> InventoryPerkList { get => inventoryPerkList; }
 
-    public void AddPerkToInventory(FloatPerkHolder_IncrementedWithPercentage _perk)
+    public void AddPerkToInventory(PerkHolder _perk)
     {
         if (inventoryPerkList.Contains(_perk))
             return;
@@ -20,7 +19,7 @@ public class BeyBladeInventory : ScriptableObject
             inventoryPerkList.Add(_perk);
         }
     }
-    public void RemovePerkFromInventory(FloatPerkHolder_IncrementedWithPercentage _perkHolder)
+    public void RemovePerkFromInventory(PerkHolder _perkHolder)
     {
         if (!inventoryPerkList.Contains(_perkHolder))
             return;

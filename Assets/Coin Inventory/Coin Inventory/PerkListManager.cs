@@ -34,6 +34,7 @@ public class PerkListManager : MonoBehaviour
         if(gameObjectPerkMapping.ContainsKey(_gameObject))
         {
             gameObjectPerkMapping[_gameObject].RedeemAllPerks();
+            inventory.RemovePerkFromInventory(gameObjectPerkMapping[_gameObject]);
         }
     }
 }

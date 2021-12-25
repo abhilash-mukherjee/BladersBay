@@ -38,7 +38,7 @@ public class BeyBladeHealthManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         CollisionManager.OnBeyBladesCollidedNormally += HandleHealthAfterCollision;
         m_CurrentHealth = maxHealth.Value;

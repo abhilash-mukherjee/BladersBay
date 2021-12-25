@@ -6,8 +6,15 @@ using UnityEngine;
 public class ResultPopUpManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player, winMessege, looseMessege;
+    private GameObject player, winMessege, looseMessege, levelRepeatWinMessege;
+    [SerializeField]
+    private LevelData levelData;
     private bool m_hasPlayerWon = false;
+    private bool m_isLevelVisited = false;
+    private void Awake()
+    {
+        m_isLevelVisited = levelData.IsLevelVisited;
+    }
     private void OnEnable()
     {
         WinnerDecideManager.OnResultsDecided += CheckIfWonOrLost;
@@ -21,7 +28,13 @@ public class ResultPopUpManager : MonoBehaviour
 
     private void PopUpMessege()
     {
-        if (m_hasPlayerWon) winMessege.SetActive(true);
+        if (m_hasPlayerWon)
+        {
+            if (m_isLevelVisited)
+                levelRepeatWinMessege.SetActive(true);
+            else 
+                winMessege.SetActive(true);
+        }
         else looseMessege.SetActive(true);
     }
 

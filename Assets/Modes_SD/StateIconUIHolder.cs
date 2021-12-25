@@ -16,12 +16,18 @@ public class StateIconUIHolder : MonoBehaviour
     [SerializeField]
     private GameObject transitionEffect;
     [SerializeField]
+    private string boolName;
+    [SerializeField]
     [Range(0f, 10f)]
     private float coroutineTime;
     [SerializeField]
     private Color inActiveColor, activeColor;
     private bool isCharged = false;
     private bool isCoroutineCalled = false;
+    [SerializeField]
+    private string electricitySoundName;
+    private Animator transitionAnimator;
+
     private void Update()
     {
         DisplayUI();
@@ -31,6 +37,7 @@ public class StateIconUIHolder : MonoBehaviour
     {
         if (StateData.IsLocked)
             gameObject.SetActive(false);
+        transitionAnimator = transitionEffect.GetComponent<Animator>();
     }
     public void DisplayUI()
     {
@@ -41,24 +48,26 @@ public class StateIconUIHolder : MonoBehaviour
                 return;
             isCharged = true;
             isCoroutineCalled = true;
-            StartCoroutine(TransitionEffect(transitionEffect));
+            AudioManager.Instance.PlaySoundOneShot(electricitySoundName);
+            transitionEffect.SetActive(true);
+            Debug.Log("entered coroutine");
             logo.GetComponent<Image>().color = activeColor;
+            StartCoroutine(TransitionEffect());
         }
         else
-        {
+        {   
             isCharged = false;
             loader.fillAmount = StateData.CurrentAvailabilityIndex / StateData.ThresholdStateAvailabiltyIndex;
             logo.GetComponent<Image>().color = inActiveColor;
-
         }
     }
 
-    IEnumerator TransitionEffect(GameObject transitionEffect)
+    IEnumerator TransitionEffect()
     {
-        Debug.Log("Coroutine called");
-        transitionEffect.SetActive(true);
+        transitionAnimator.SetBool(boolName, true);
         yield return new WaitForSeconds(coroutineTime);
         transitionEffect.SetActive(false);
         isCoroutineCalled = false;
+        transitionAnimator.SetBool(boolName, false);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -61,6 +62,12 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    internal void PlaySoundOneShot(object electricitySoundName)
+    {
+        throw new NotImplementedException();
+    }
+
     public void PlaySoundOneShot(string clipName)
     {
         var audio = sounds.First(s => s.name.Equals(clipName));
@@ -89,7 +96,21 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-
+    public bool IsSoundPlaying(string clipName)
+    {
+        var audio = sounds.First(s => s.name.Equals(clipName));
+        if (audio == null)
+        {
+            Debug.LogWarning("Sound Does not exist");
+            return false;
+        }
+        else
+        {
+            if (audio.source.isPlaying)
+                return true;
+            else return false;
+        }
+    }
    IEnumerator Decay(float decayRate, AudioSource audioSource)
     {
         yield return new WaitForEndOfFrame();

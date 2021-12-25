@@ -6,5 +6,5 @@ public class FloatVariable : ScriptableObject
 {
     [SerializeField]
     private float floatValue;
-    public virtual float Value { get => floatValue; set => this.floatValue = value; }
+    public virtual float Value { get => floatValue; set => floatValue = value; }
 }

@@ -11,6 +11,8 @@ public class AfterEndPerkManager : MonoBehaviour
     [SerializeField]
     private List<PerkHolder> AddToInventoryPerkHolders = new List<PerkHolder>();
     [SerializeField]
+    private BeyBladeInventory inventory;
+    [SerializeField]
     private GameObject player;
     
 
@@ -29,6 +31,8 @@ public class AfterEndPerkManager : MonoBehaviour
         if(player == _winner)
         {
             RedeemPerks(InstantReedemableWinPerkHolders);
+            foreach (var _perk in AddToInventoryPerkHolders)
+                inventory.AddPerkToInventory(_perk);
         }
         else RedeemPerks(InstantReedemableLossPerkHolders);
     }

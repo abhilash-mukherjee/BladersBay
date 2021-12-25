@@ -54,9 +54,11 @@ MonoBehaviour:
   loader: {fileID: 3030397849361660869}
   logo: {fileID: 2701367199189203374}
   transitionEffect: {fileID: 2688585011011015772}
+  boolName: IsActive
   coroutineTime: 2
   inActiveColor: {r: 1, g: 1, b: 1, a: 0.36862746}
   activeColor: {r: 1, g: 1, b: 1, a: 1}
+  electricitySoundName: Electricity
 --- !u!1 &4551048260635034367
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,9 +416,11 @@ MonoBehaviour:
   loader: {fileID: 4551048260708487087}
   logo: {fileID: 4551048260635034336}
   transitionEffect: {fileID: 2688585011342389247}
+  boolName: IsActive
   coroutineTime: 2
   inActiveColor: {r: 1, g: 1, b: 1, a: 0.36862746}
   activeColor: {r: 1, g: 1, b: 1, a: 1}
+  electricitySoundName: Electricity
 --- !u!1 &4551048260708487082
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,9 +576,11 @@ MonoBehaviour:
   loader: {fileID: 4551048260705900538}
   logo: {fileID: 4551048261385890988}
   transitionEffect: {fileID: 2688585012475484265}
+  boolName: IsActive
   coroutineTime: 2
   inActiveColor: {r: 1, g: 1, b: 1, a: 0.36862746}
   activeColor: {r: 1, g: 1, b: 1, a: 1}
+  electricitySoundName: Electricity
 --- !u!1 &4551048261206575462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1239,10 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[1].m_Value.z
       value: 2.1853387
       objectReference: {fileID: 0}
+    - target: {fileID: 5453866942699195776, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1d7a9326710f9594eb89b8fbb4b601a1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
 --- !u!1 &2688585012475484265 stripped
@@ -1328,6 +1338,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5453866942699195776, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1d7a9326710f9594eb89b8fbb4b601a1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
 --- !u!4 &2688585011011015769 stripped
@@ -1423,6 +1437,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5453866942699195776, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1d7a9326710f9594eb89b8fbb4b601a1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b7f47c4d2a87b4d9b96943ad1403d1, type: 3}
 --- !u!1 &2688585011342389247 stripped
