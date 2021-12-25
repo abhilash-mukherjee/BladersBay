@@ -15,10 +15,10 @@ MonoBehaviour:
   perkPrefab: {fileID: 4282966848670354401, guid: adb1b2ec48b84f24baaaeba52a0dc89c, type: 3}
   floatPerks_IncrementedWithPercentage:
   - FloatVariable: {fileID: 11400000, guid: fef10c2f42d18814aa447a89f55844d5, type: 2}
-    incrementPercentage: -0.2
+    incrementPercentage: 0.2
   - FloatVariable: {fileID: 11400000, guid: 894b4767f3ba2114589ca516db2ef635, type: 2}
-    incrementPercentage: -0.2
+    incrementPercentage: 0.2
   - FloatVariable: {fileID: 11400000, guid: c9431bd0cb8711241820b67793e0db8c, type: 2}
-    incrementPercentage: -0.2
+    incrementPercentage: 0.2
   - FloatVariable: {fileID: 11400000, guid: bc3a6c13f8e670e4fb9b00e937b5d51e, type: 2}
-    incrementPercentage: -0.2
+    incrementPercentage: 0.2

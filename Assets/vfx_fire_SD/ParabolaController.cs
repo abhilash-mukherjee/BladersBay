@@ -127,17 +127,8 @@ public class ParabolaController : MonoBehaviour
 
     IEnumerator DeactivateSpirit()
     {
-        while(m_closeAnimationTimer >= 0)
-        {
-            yield return new WaitForEndOfFrame();
-            m_closeAnimationTimer -= Time.deltaTime;
-            spiritPrefab.transform.localScale = Vector3.Lerp(spiritPrefab.transform.localScale, Vector3.zero, Time.deltaTime * spiritDeactivateLerSpeed);
-            StartCoroutine(DeactivateSpirit());
-        }
-        
+        yield return new WaitForSeconds(spiritDeactivateTime);
         spiritPrefab.SetActive(false);
-        m_closeAnimationTimer = spiritDeactivateTime;
-        yield return null;
     }
 
     private void RaiseParabolaCompletedEvent()

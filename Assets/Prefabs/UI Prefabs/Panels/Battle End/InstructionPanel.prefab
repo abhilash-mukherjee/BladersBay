@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1544187521958773096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166929466662274388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5063b18a392184180494e8c4f46e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1898374536510145313
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,13 +490,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
+      propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1544187521958773096}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -495,15 +511,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Next
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayAudio
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
+      propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ButtonClickManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
+      propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CoinInventory
       objectReference: {fileID: 0}
     - target: {fileID: 4862403011161954851, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
       propertyPath: onButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -523,6 +547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
+--- !u!1 &1166929466662274388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4862403011161954853, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
+  m_PrefabInstance: {fileID: 6002029381391638385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1166929466662274387 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4862403011161954850, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
@@ -533,7 +562,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2513142653220086091, guid: 5de10ca8fe6ed7c42a166df6f865e8a7, type: 3}
   m_PrefabInstance: {fileID: 6002029381391638385}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1166929466662274388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1434765c023f5e46ba881eafc282560, type: 3}
