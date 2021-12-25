@@ -20,7 +20,7 @@ MonoBehaviour:
   damageValue: {fileID: 11400000, guid: a125a5cdffbe55c4796169987d6cbd73, type: 2}
   speed: {fileID: 11400000, guid: 37ffacb592c2620418528ffe2034d040, type: 2}
   stateReplenishmentRate: {fileID: 11400000, guid: dbeb1c05825f2ba4685a93aeee733836, type: 2}
-  stateDepletionRate: {fileID: 11400000, guid: 951c6970a29cad549a296a3e3e0ce166, type: 2}
-  startingStateAvailabiltyIndx: {fileID: 11400000, guid: ee1d15a2f02feb246a29b0bc7e9f4d92, type: 2}
-  thresholdStateAvailabiltyIndex: {fileID: 11400000, guid: a3961c8c048b27e45bafa7543c1d00e0, type: 2}
-  minimumStateAvailabiltyIndex: {fileID: 11400000, guid: 39962303d73e4264c9de4f578f8b3104, type: 2}
+  stateDepletionRate: {fileID: 11400000, guid: 0eec070f43d25e844a08548780ac4008, type: 2}
+  startingStateAvailabiltyIndx: {fileID: 11400000, guid: 09559c14397f8294aa29ecf8da18ac4c, type: 2}
+  thresholdStateAvailabiltyIndex: {fileID: 11400000, guid: e55e0f7adf536cb4e9d9c867c1ba9d4b, type: 2}
+  minimumStateAvailabiltyIndex: {fileID: 11400000, guid: 3fd28f5bd04f3154d829c783b0029c4b, type: 2}
