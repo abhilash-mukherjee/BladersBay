@@ -17,7 +17,7 @@ MonoBehaviour:
   attackValue: {fileID: 11400000, guid: bdfb0898b2bb0ad4385a9f4cbed451b6, type: 2}
   defenceValue: {fileID: 11400000, guid: 86fdb359537fe4942b54127ab1ef272d, type: 2}
   staminaValue: {fileID: 11400000, guid: 1873741cdc3d7c5449859afff16a37ac, type: 2}
-  damageValue: {fileID: 11400000, guid: 511e45df6241e4c45988b80e57bf70c4, type: 2}
+  damageValue: {fileID: 11400000, guid: 4f364d2148e016e43beb0ba79f1badd3, type: 2}
   speed: {fileID: 11400000, guid: c179cd0403b53464ba70a668e81d0c5c, type: 2}
   stateReplenishmentRate: {fileID: 11400000, guid: 535fb0cd2d6bbaf489c64d072b42afaa, type: 2}
   stateDepletionRate: {fileID: 11400000, guid: 59d15e74a95284746add2a8e00adab94, type: 2}

@@ -33,7 +33,7 @@ public class UpdateStateAvalabilityAfterAttacking : StateAvailabilityAction
             foreach(var _dictState in _stateController.StateDict)
             {
                 if (_dictState.Value.Data.StateName == AttackStateName)
-                    _dictState.Value.Data.CurrentAvailabilityIndex += _dataFromList.CollisionIndex * _dictState.Value.Data.StateReplenishmentRate;
+                    _dictState.Value.Data.CurrentAvailabilityIndex +=  _dictState.Value.Data.StateReplenishmentRate;
             }
             m_collisionDataList.Remove(_dataFromList);
         }
