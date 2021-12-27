@@ -402,3 +402,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd014bf5f8ea3143bee7953f1abbb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisCollider: {fileID: 4151109908368469562}

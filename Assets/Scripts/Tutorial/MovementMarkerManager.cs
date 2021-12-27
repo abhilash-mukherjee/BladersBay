@@ -7,29 +7,37 @@ public class MovementMarkerManager : MonoBehaviour
 {
     public delegate void TargetReachedHandler();
     public static event TargetReachedHandler OnTargetReached;
-    private void OnEnable()
+    [SerializeField]
+    private Collider thisCollider;
+    private Collider m_playerCollider;
+    public void SetCollider(Collider _collider)
     {
-        TeachMovement.OnMarkerDestroyed += DestroyMarker;
+        m_playerCollider = _collider;
     }
-    private void OnDisable()
-    {
-        TeachMovement.OnMarkerDestroyed -= DestroyMarker;
-        
-    }
-
     private void DestroyMarker()
     {
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            Debug.Log("Target Reached");
-            OnTargetReached?.Invoke();
-            AudioManager.Instance.PlaySoundOneShot("MovementMarkerReached");
-            Destroy(gameObject);
+        if(m_playerCollider != null)
+        {  
+            if(CheckCollision())
+            {
+                OnTargetReached?.Invoke();
+                DestroyMarker();
+            }
         }
     }
+    private bool CheckCollision()
+    {
+        if (thisCollider.bounds.Intersects(m_playerCollider.bounds))
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    
 }
