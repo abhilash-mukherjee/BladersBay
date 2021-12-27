@@ -74,6 +74,12 @@ MonoBehaviour:
     loop: 0
     name: SplashScreenAudio2
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 785b060a4c915f6429eda2d2c7a599ec, type: 3}
+    volume: 1
+    pitch: 0.74
+    loop: 0
+    name: SplashScreenAudio3
+    source: {fileID: 0}
   - clip: {fileID: 8300000, guid: ed3629852105c6f42af367bbf94da238, type: 3}
     volume: 0.32
     pitch: 1
@@ -83,12 +89,54 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: de458e4d360a4804ea295221a3490358, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     name: ButtonClick
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: de458e4d360a4804ea295221a3490358, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     name: MovementMarkerReached
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 8c3c01810cd14a046b35cb913136f151, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    name: Three
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 4c1c7c2b2177605459607b0b4534c0de, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    name: Two
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: e3387d4c30ca9354cb331153a2e599f2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    name: One
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 7325bbf5ec6c32348a07966aa8b2880e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    name: LetsGo
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 8363b244335843641b5b28f4044ef953, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    name: Electricity
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 80ec82e653164a54ca6798aa92d48f46, type: 3}
+    volume: 0.164
+    pitch: 1
+    loop: 1
+    name: Wind
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: de458e4d360a4804ea295221a3490358, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    name: 
     source: {fileID: 0}

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Attack Training.unity
     guid: c9b9cecd57243964794af7ac07b00385
+  - enabled: 1
+    path: Assets/Scenes/Defence Training.unity
+    guid: f67cf7ba5ac55834ea8e27d8b0e6def0
   m_configObjects: {}

@@ -32,7 +32,10 @@ public class TrainingDisplayManager : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
+    public void PlaySound(string _soundName)
+    {
+        AudioManager.Instance.PlaySoundOneShot(_soundName);
+    }
     private void Update()
     {
         if (m_currentAvailabilityStatus == playerStateController.StateDict[targetModeName].AvailabilityStatus.Name)
