@@ -5,7 +5,9 @@ using UnityEngine;
 public class MovementTrainingManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject markerPrefab;
+    private int maximumStepIndex;
+    [SerializeField]
+    private GameObject markerPrefab, winPanel;
     [SerializeField]
     private List<Vector3> positions = new List<Vector3>();
     [SerializeField]
@@ -15,6 +17,10 @@ public class MovementTrainingManager : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private int m_index = 0;
+
+    public void PlayAudio(string _audioclip){
+        AudioManager.Instance.PlaySoundOneShot(_audioclip);
+    }
     private void OnEnable()
     {
         MovementMarkerManager.OnTargetReached += MarkerReached;
@@ -33,6 +39,10 @@ public class MovementTrainingManager : MonoBehaviour
     private void MarkerReached()
     {
         m_index++;
+        if(m_index > maximumStepIndex) {
+            winPanel.SetActive(true);
+            gameObject.SetActive(false);
+        }
         animator.SetBool(prefix + m_index, true);
     }
 

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Movement Training.unity
     guid: e1a9c8915982c334cbaeea80d019357c
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 8a0c5949744660e498a8aa05ba38e6dc
   m_configObjects: {}

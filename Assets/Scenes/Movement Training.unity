@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 147824268}
   - component: {fileID: 147824269}
   m_Layer: 5
-  m_Name: Entry
+  m_Name: Movement Mastery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,8 +195,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0f2a0289c9af14e92bc71d90d06868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maximumStepIndex: 2
   markerPrefab: {fileID: 4826799115381603029, guid: ac921b17b0ce89642ac9a25e365252c9, type: 3}
-  positions: []
+  winPanel: {fileID: 5782450375728558995}
+  positions:
+  - {x: -1.61, y: -1.07, z: -3.37}
+  - {x: 0, y: -1.01, z: -4.55}
+  - {x: 1.864, y: -0.921, z: -1.01}
   playerCollider: {fileID: 1768413893}
   prefix: Step
   animator: {fileID: 147824268}
@@ -940,7 +945,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &970142174
 GameObject:
@@ -1239,7 +1244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1255740697
 MonoBehaviour:
@@ -1389,145 +1394,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273648820}
   m_CullTransparentMesh: 1
---- !u!1 &1315753801
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1315753803}
-  - component: {fileID: 1315753802}
-  - component: {fileID: 1315753804}
-  - component: {fileID: 1315753806}
-  - component: {fileID: 1315753805}
-  m_Layer: 0
-  m_Name: Collision Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1315753802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315753801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1b8978105771b458e44a44b6ea0252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionTypes:
-  - {fileID: 11400000, guid: 9d051afcbc27aa6428e3ef3e482b2144, type: 2}
-  - {fileID: 11400000, guid: e822a02d9ffde3b4cbd8ba16f0a67df6, type: 2}
-  - {fileID: 11400000, guid: 261d7c23df2ef0f448c574e59ab4e37d, type: 2}
-  - {fileID: 11400000, guid: 0a6b7b770cc9c1f41b30a689c7057350, type: 2}
-  - {fileID: 11400000, guid: acecb9153b2fa6d4e8b732277347f092, type: 2}
-  - {fileID: 11400000, guid: eeb2badbbd939a3488c35b7cd416740b, type: 2}
-  - {fileID: 11400000, guid: 44bb6c9abe2ca87448e6e1297ab2b476, type: 2}
-  - {fileID: 11400000, guid: b580b8b143f7aa344868c85debd40c8c, type: 2}
-  - {fileID: 11400000, guid: c711f44260b991842ba7d0c3aa4d8b16, type: 2}
-  - {fileID: 11400000, guid: 365d0fb4b3bc05c47b2084081850db38, type: 2}
-  - {fileID: 11400000, guid: 78a89faad2b70834db00d96b97ec815b, type: 2}
-  - {fileID: 11400000, guid: 190fa19567f5d764aa545d79c5491567, type: 2}
-  timeGapBetweenTwoCollisions: 1
-  player1Collider: {fileID: 1768413893}
-  player2Collider: {fileID: 0}
-  beybladeHitSound: BeyBladeClash
-  collisionSpark: {fileID: 237334971797739403, guid: bf1b76d0d986aab40bfb16d1240fb354, type: 3}
-  collisionVelocityMultiplier: 1
-  staticCollisionVelocityLimit: 0.01
-  staticCollisionVelocityMultiplier: 1
-  safeDistanceForGlitchFreeBehaviour: 0.18
---- !u!4 &1315753803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315753801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 0.103, z: 7.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1315753804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315753801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2f2869a0715d54eb9dc2a386723a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptsToDisable:
-  - {fileID: 1315753802}
-  collidersToDisable: []
---- !u!114 &1315753805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315753801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17dbc86e83f067f449d814880e809eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1315753804}
-        m_TargetAssemblyTypeName: ComponentTurnOffManager, Assembly-CSharp
-        m_MethodName: TurnOffComponents
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1315753801}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameEvent: {fileID: 11400000, guid: 4a1c36d56bfaa36458e45ad645a12600, type: 2}
---- !u!114 &1315753806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315753801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17dbc86e83f067f449d814880e809eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1315753804}
-        m_TargetAssemblyTypeName: ComponentTurnOffManager, Assembly-CSharp
-        m_MethodName: TurnOffComponents
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1315753801}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameEvent: {fileID: 11400000, guid: 7c32bcca83bc3d844bcf00db18d20c5f, type: 2}
 --- !u!1 &1418795503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9156412755602143847, guid: 18f13d1ca96a51748887cb1bf37dc56d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9156412755602143847, guid: 18f13d1ca96a51748887cb1bf37dc56d, type: 3}
       propertyPath: m_LocalPosition.x
