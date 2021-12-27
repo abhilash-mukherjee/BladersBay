@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 1185191579}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5882353, g: 0.5647059, b: 0.28235295, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1967,10 +1967,10 @@ RectTransform:
   m_GameObject: {fileID: 613961970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13125, y: 1.6558121, z: 1}
+  m_LocalScale: {x: 0.13125001, y: 1.6558121, z: 1}
   m_Children: []
-  m_Father: {fileID: 2181625677661562931}
-  m_RootOrder: 1
+  m_Father: {fileID: 2181625676726873409}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -120}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 399852564}
-  m_Color: {r: 1, g: 0.93725497, b: 0.67058825, a: 1}
+  m_Color: {r: 0.9921569, g: 1, b: 0.5137255, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2413,7 +2413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 1376330377}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6, g: 0.5764706, b: 0.29803923, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2657,6 +2657,8 @@ MonoBehaviour:
     layerObjectsPool:
     - {fileID: 730315928}
     - {fileID: 652339087}
+    - {fileID: 1686484386}
+    - {fileID: 1147859186}
   - layerName: PrimaryTextLayer
     colorValueHex: 
     layerObjectsPool:
@@ -3393,7 +3395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 1069123793}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5422959, g: 0.5471698, b: 0.30662155, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4366,7 +4368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 399852564}
-  m_Color: {r: 1, g: 0.93725497, b: 0.67058825, a: 1}
+  m_Color: {r: 0.9921569, g: 1, b: 0.49803925, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4888,10 +4890,10 @@ MonoBehaviour:
   - layerName: PrimaryLayer
     colorValueHex: 
     layerObjectsPool:
+    - {fileID: 181810745}
+    - {fileID: 1023906216}
     - {fileID: 9157731670220446478}
     - {fileID: 827375578551946054}
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!114 &827375576789866707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4979,7 +4981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &827375576789866712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,8 +4995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: {fileID: 11400000, guid: 8da54cea919b7e14e8e7d9e1400a9540, type: 2}
-  m_enableImage: {fileID: 3830970672292548321}
-  m_loader: {fileID: 6093661806448612062}
+  image: {fileID: 827375577180315041}
 --- !u!114 &827375576789866716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5084,7 +5085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &827375577180315042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5301,6 +5302,7 @@ RectTransform:
   - {fileID: 1810680832}
   - {fileID: 7650227244850359277}
   - {fileID: 549964305205397175}
+  - {fileID: 613961971}
   m_Father: {fileID: 2181625677661562931}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5325,7 +5327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2181625677661562928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5411,10 +5413,10 @@ MonoBehaviour:
   - layerName: PrimaryLayer
     colorValueHex: 
     layerObjectsPool:
+    - {fileID: 1810680832}
+    - {fileID: 190895900}
     - {fileID: 7650227244850359277}
     - {fileID: 2181625678047984549}
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!114 &2181625677661562930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5442,7 +5444,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2181625676726873409}
-  - {fileID: 613961971}
   m_Father: {fileID: 1428508302}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -120}
@@ -5474,7 +5475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2181625677661562933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5488,8 +5489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: {fileID: 11400000, guid: 93df0b1d139934147821007690eeaedb, type: 2}
-  m_enableImage: {fileID: 2312469550398471682}
-  m_loader: {fileID: 613961973}
+  image: {fileID: 2181625676726873410}
 --- !u!222 &2181625677661562940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6347,7 +6347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7686115600075400242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6439,10 +6439,10 @@ MonoBehaviour:
   - layerName: PrimaryLayer
     colorValueHex: 
     layerObjectsPool:
+    - {fileID: 564351194}
+    - {fileID: 38407827}
     - {fileID: 2217794879871394462}
     - {fileID: 7686115598779265750}
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!114 &7686115600239386947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6530,7 +6530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7686115600239386952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6544,8 +6544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: {fileID: 11400000, guid: 050a597151eb03f4fa8f67d0b80d192c, type: 2}
-  m_enableImage: {fileID: 6123676517119588209}
-  m_loader: {fileID: 760232961}
+  image: {fileID: 7686115600075400241}
 --- !u!114 &7686115600239386956
 MonoBehaviour:
   m_ObjectHideFlags: 0

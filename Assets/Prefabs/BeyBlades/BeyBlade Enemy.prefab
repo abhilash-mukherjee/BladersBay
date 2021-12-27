@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 161168470558001150}
   - component: {fileID: 161168470558001139}
   - component: {fileID: 161168470558001138}
-  - component: {fileID: 161168470558001140}
+  - component: {fileID: 7051938771070391759}
   - component: {fileID: 161168470558001145}
   - component: {fileID: 161168470558001146}
   - component: {fileID: 161168470558001147}
@@ -315,7 +315,7 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.001, z: 0}
---- !u!114 &161168470558001140
+--- !u!114 &7051938771070391759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,17 +324,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 161168470558001141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676ed09a061772c489b70137ae2071f3, type: 3}
+  m_Script: {fileID: 11500000, guid: e05786eefd3092d449c97d70b62607cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrigger: 257
-  defenceTrigger: 258
-  staminaTrigger: 259
-  balanceTrigger: 260
-  attackTriggerEvent: {fileID: 11400000, guid: a51e86a3edaecd147a880d01d80709eb, type: 2}
-  defenceTriggerEvent: {fileID: 11400000, guid: 06b78c6e8b935fa4591c0738eacef93b, type: 2}
-  staminaTriggerEvent: {fileID: 11400000, guid: b5002130bda6078499642ee029522924, type: 2}
-  balanceTriggerEvent: {fileID: 11400000, guid: 5fc4ce8287ae0f7409570ff309a66438, type: 2}
+  attackTrigger: 0
+  defenceTrigger: 0
+  staminaTrigger: 0
+  balanceTrigger: 0
+  attackTriggerEvent: {fileID: 0}
+  defenceTriggerEvent: {fileID: 0}
+  staminaTriggerEvent: {fileID: 0}
+  balanceTriggerEvent: {fileID: 0}
+  enemyStateController: {fileID: 161168470558001145}
+  playerStateController: {fileID: 0}
+  startingAIState: {fileID: 11400000, guid: a689a9331b312554e812fe3212fe5824, type: 2}
 --- !u!114 &161168470558001145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ordinaryMovementManager: {fileID: 161168470558001136}
   collisionMovementManager: {fileID: 161168470558001148}
-  inputController: {fileID: 161168470558001140}
+  inputController: {fileID: 0}
   movementControlSwitchTime: 1.01
 --- !u!114 &161168470558001136
 MonoBehaviour:
@@ -596,7 +599,7 @@ MonoBehaviour:
   - {fileID: 161168470558001147}
   - {fileID: 161168470558001146}
   - {fileID: 161168470558001145}
-  - {fileID: 161168470558001140}
+  - {fileID: 7051938771070391759}
   collidersToDisable:
   - {fileID: 161168470558001138}
 --- !u!114 &161168470558001123

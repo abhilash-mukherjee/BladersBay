@@ -1,7 +1,7 @@
 using UnityEngine;
 using JMRSDK.InputModule;
 
-public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandler
+public class GamePlayInputController : InputController, ISwipeHandler
 {
 
     [SerializeField]
@@ -12,7 +12,7 @@ public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandle
     private float minimumDistanceBetweenHitPointAndBeyBladeToAllowMovement = 0.05f;
     [SerializeField]
     private GameEvent LeftSwipeEvent, RightSwipeEvent, UpSwipeEvent, DownSwipeEvent;
-    private bool m_isMoving = false;
+    private bool m_isMoving = true;
 
     private void Awake()
     {
@@ -58,10 +58,7 @@ public class GamePlayInputController : InputController,IFn1Handler, ISwipeHandle
         return _moveDir;
     }
 
-    public void OnFn1Action()
-    {
-        StopStartMovementAlternatively();
-    }
+  
     public void OnSwipeLeft(SwipeEventData eventData, float value)
     {
         LeftSwipeEvent.Raise();

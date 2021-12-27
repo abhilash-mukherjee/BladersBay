@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CoinInventory.unity
     guid: 7fab0f71849d24847b1549ab7f84ca0e
+  - enabled: 1
+    path: Assets/Scenes/Attack Training.unity
+    guid: c9b9cecd57243964794af7ac07b00385
   m_configObjects: {}
