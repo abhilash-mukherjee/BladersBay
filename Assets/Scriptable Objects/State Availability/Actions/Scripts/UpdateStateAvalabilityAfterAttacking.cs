@@ -42,11 +42,11 @@ public class UpdateStateAvalabilityAfterAttacking : StateAvailabilityAction
     public void OnAttacked(StateController _stateController, float _collisionIndex)
     {
         if (_stateController.CurrentState.Name != BalanceStateName)
-        {
+        { 
             return;
         }
         var _Data = new ColisionData(_stateController, _stateController.CurrentState.Name, _collisionIndex);
-        var _dataFromList = m_collisionDataList.Find(p => p.stateController == _Data.stateController);
+        var _dataFromList = m_collisionDataList.Find(p => p.stateController == _Data.stateController); 
         if (_dataFromList == null)
         {
             m_collisionDataList.Add(_Data);

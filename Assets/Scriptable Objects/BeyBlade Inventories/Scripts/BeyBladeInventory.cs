@@ -8,14 +8,14 @@ public class BeyBladeInventory : ScriptableObject
     private List<PerkHolder> inventoryPerkList = new List<PerkHolder>();
 
     public List<PerkHolder> InventoryPerkList { get => inventoryPerkList; }
-
     public void AddPerkToInventory(PerkHolder _perk)
     {
         if (inventoryPerkList.Contains(_perk))
             return;
         else
         {
-            _perk.perkPrefab.AddComponent<TransitionCard_SD>();
+            if(_perk.perkPrefab != null)
+                _perk.perkPrefab.AddComponent<TransitionCard_SD>();
             inventoryPerkList.Add(_perk);
         }
     }

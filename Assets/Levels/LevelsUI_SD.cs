@@ -12,6 +12,7 @@ public class LevelsUI_SD : MonoBehaviour
     public int index = 1;
     void Start()
     {
+        LevelChanging(10);
     }
 
     // Update is called once per frame

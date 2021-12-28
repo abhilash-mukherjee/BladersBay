@@ -12,7 +12,7 @@ public class InstatiatePanelManager : MonoBehaviour
 
     public void InstatiatePanel(GameObject gameObject){
         GameObject _go = Instantiate(panel,transform.parent);
-        _go.transform.localPosition = gameObject.transform.position;
+        // _go.transform.localPosition = transform.position;
         Debug.Log(_go.transform.localPosition);
         _go.transform.localScale = localScale;
         Debug.Log(_go.transform.localScale);

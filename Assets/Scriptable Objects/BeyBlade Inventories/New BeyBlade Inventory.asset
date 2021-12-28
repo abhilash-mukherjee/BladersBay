@@ -12,5 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb5ae168d5a5a840a8acff7db330ad6, type: 3}
   m_Name: New BeyBlade Inventory
   m_EditorClassIdentifier: 
-  inventoryPerkList:
-  - {fileID: 11400000, guid: 03a04b71d5d938f4c82d39c2b914b6ee, type: 2}

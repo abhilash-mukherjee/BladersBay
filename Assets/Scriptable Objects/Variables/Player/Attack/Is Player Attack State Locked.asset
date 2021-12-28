@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e26bd4a2b18e94cb06b76337b5ecfb, type: 3}
   m_Name: Is Player Attack State Locked
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 1
