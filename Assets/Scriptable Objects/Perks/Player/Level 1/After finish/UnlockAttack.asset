@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9339a11cdfac2fa43ad541230f6adb62, type: 3}
   m_Name: UnlockAttack
   m_EditorClassIdentifier: 
-  perkPrefab: {fileID: 3350226794894855408, guid: 35190591dc7c2bb428e40c5e2a3e33dc, type: 3}
+  perkPrefab: {fileID: 7880603315022390534, guid: db9e3aa4601ac8542a863e2744b3640a, type: 3}
+  coinsRequiredToUnlock: 30
+  playerCoinCount: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}
   booleanPerks:
   - BoolVariable: {fileID: 11400000, guid: 8da54cea919b7e14e8e7d9e1400a9540, type: 2}
     finalBool: 0

@@ -81,7 +81,7 @@ MonoBehaviour:
     name: SplashScreenAudio3
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: ed3629852105c6f42af367bbf94da238, type: 3}
-    volume: 0.32
+    volume: 0.2
     pitch: 1
     loop: 1
     name: BGM1
@@ -138,5 +138,5 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    name: 
+    name: PanelPopUp
     source: {fileID: 0}

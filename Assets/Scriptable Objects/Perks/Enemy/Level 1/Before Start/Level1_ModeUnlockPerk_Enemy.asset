@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Level1_ModeUnlockPerk_Enemy
   m_EditorClassIdentifier: 
   perkPrefab: {fileID: 0}
+  coinsRequiredToUnlock: 0
+  playerCoinCount: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}
   booleanPerks:
   - BoolVariable: {fileID: 11400000, guid: 03df0a3e7a61a7c409525091574e2acc, type: 2}
     finalBool: 1

@@ -8,7 +8,6 @@ public class CheckIfModeActivated : StateAvailabilityDecission
     {
         if(_stateController.CurrentState.Name == _state.Name)
         {
-            Debug.Log($" {_state.Name} is activated ");
             return true;
         }
         else

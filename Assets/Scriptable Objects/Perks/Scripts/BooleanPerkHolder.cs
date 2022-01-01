@@ -5,9 +5,18 @@ public class BooleanPerkHolder : PerkHolder
 {
     [SerializeField]
     private List<BooleanPerk> booleanPerks;
-    public override void RedeemAllPerks()
+    public override bool RedeemAllPerks()
     {
-        foreach (var perk in booleanPerks)
-            perk.Redeem();
+
+        if (CoinsRequiredToUnlock <= PlayerCoinCount.Value)
+        {
+            foreach (var _perk in booleanPerks)
+            {
+                _perk.Redeem();
+            }
+            PlayerCoinCount.Value -= CoinsRequiredToUnlock;
+            return true;
+        }
+        else return false;
     }
 }

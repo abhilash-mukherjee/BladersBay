@@ -16,7 +16,7 @@ public class PlayerData : BeyBladeData
         {
             if (value.Value >= HighestLevel)
                 m_maximumLevelUnlocked.Value = HighestLevel;
-            else if (value.Value <= 1)
+            else if (value.Value < 1)
                 m_maximumLevelUnlocked.Value = 1;
             else
                 m_maximumLevelUnlocked.Value = value.Value;

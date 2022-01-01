@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level Data 1
   m_EditorClassIdentifier: 
   levelIndex: 1
-  isLevelVisited: 1
+  isLevelVisited: 0

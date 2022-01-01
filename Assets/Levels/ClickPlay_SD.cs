@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class ClickPlay_SD : MonoBehaviour
 {
-    public List<LevelsUINew_SD> levelsUINew_SDs;
+    public List<UIElementsPopupManager > levelsUINew_SDs;
     [SerializeField]
     private bool isPlayClick = true;
     [SerializeField]
-    private GameObject iObject;
-    public void ClickEventUI(bool isReversed){
+    private GameObject infoButton;
+    [SerializeField]
+    private LevelButtonFillAnimationManager LevelButtonFillAnimationManager;
+    public void StartUIPopUpPopDown(bool isReversed){
         isPlayClick = !isPlayClick;
-        iObject.SetActive(isPlayClick);
+        infoButton.SetActive(isPlayClick);
+        LevelButtonFillAnimationManager.StartLevelFillAnimation();
         foreach(var levelsUINew_SD in levelsUINew_SDs){
             levelsUINew_SD.AnimateUIStart(isReversed);
         }

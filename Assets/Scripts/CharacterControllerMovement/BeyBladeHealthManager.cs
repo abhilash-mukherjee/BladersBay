@@ -30,7 +30,6 @@ public class BeyBladeHealthManager : MonoBehaviour
             }
             else if (value >= maxHealth.Value)
             {
-                Debug.Log("Max health achieved");
                 currentHealth.Value = maxHealth.Value;
             }
             else
@@ -60,28 +59,36 @@ public class BeyBladeHealthManager : MonoBehaviour
             Debug.Log("Neither Attacker Nor Victim");
             return;
         }
-        else if(_Collision.IsVictim (gameObject))
+        if(_Collision.IsVictim (gameObject))
         {
             var _attacker = _Collision.GetAttacker(gameObject);
-            if(_attacker == null)
+            if (_attacker == null)
             {
-                return;
+                Debug.Log("No attacker found");
             }
-            RaiseDefenceEvent(_Collision.CollisionIndex);
-            float _dmg = CalculateDamageWhileDefending(_Collision.CollisionIndex, _attacker);
-            m_CurrentHealth -= _dmg;
+            else
+            {
+                RaiseDefenceEvent(_Collision.CollisionIndex);
+                float _dmg = CalculateDamageWhileDefending(_Collision.CollisionIndex, _attacker);
+                m_CurrentHealth -= _dmg;
+            }
 
         }
-        else if (_Collision.IsAttacker(gameObject))
+        if (_Collision.IsAttacker(gameObject))
         {
+            Debug.Log($"{gameObject} has attacked");
             var _victim = _Collision.GetVictim(gameObject);
             if (_victim == null)
             {
-                return;
+                Debug.Log("No victim found");
             }
-            RaiseAttackEvent(_Collision.CollisionIndex);
-            float _dmg = CalculateDamageWhileAttacking(_Collision.CollisionIndex, _victim);
-            m_CurrentHealth -= _dmg;
+            else
+            {
+                Debug.Log($"Attack registered for {gameObject}");
+                RaiseAttackEvent(_Collision.CollisionIndex);
+                float _dmg = CalculateDamageWhileAttacking(_Collision.CollisionIndex, _victim);
+                m_CurrentHealth -= _dmg;
+            }
         }
         RaiseCollisionEvent(_Collision.CollisionIndex);
         
@@ -119,5 +126,9 @@ public class BeyBladeHealthManager : MonoBehaviour
         else return false;
     }
 
+    public void MaximizeHealth()
+    {
+        m_CurrentHealth = maxHealth.Value;
+    }
 }
 

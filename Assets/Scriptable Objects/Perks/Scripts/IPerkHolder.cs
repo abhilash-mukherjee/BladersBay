@@ -1,4 +1,4 @@
 ﻿public interface IPerkHolder
 {
-    void RedeemAllPerks();
+    bool RedeemAllPerks();
 }

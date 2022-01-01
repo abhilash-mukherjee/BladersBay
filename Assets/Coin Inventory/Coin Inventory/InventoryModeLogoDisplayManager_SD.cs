@@ -7,20 +7,20 @@ public class InventoryModeLogoDisplayManager_SD : MonoBehaviour
     [SerializeField]
     private List<ModeNameHolder_SD> modeLogoList = new List<ModeNameHolder_SD>();
     [SerializeField]
-    private InventoryModeChangeDisplayManager_SD inventoryModeChangeDisplay;
+    private InventoryModeChangeDisplayManager inventoryModeChangeDisplay;
     [SerializeField]
     private Vector3 activeLocalScale, inActiveLocalScale;
     [SerializeField]
     private Color activeColor, inActiveColor;
     private void OnEnable()
     {
-        InventoryModeChangeDisplayManager_SD.OnActiveModeListUpdated += UpdateModeLogoList;
-        InventoryModeChangeDisplayManager_SD.OnLeftRightClicked += OnLeftRightClicked;
+        InventoryModeChangeDisplayManager.OnActiveModeListUpdated += UpdateModeLogoList;
+        InventoryModeChangeDisplayManager.OnLeftRightClicked += OnLeftRightClicked;
     }
     private void OnDisable()
     {
-        InventoryModeChangeDisplayManager_SD.OnActiveModeListUpdated -= UpdateModeLogoList;
-        InventoryModeChangeDisplayManager_SD.OnLeftRightClicked -= OnLeftRightClicked;
+        InventoryModeChangeDisplayManager.OnActiveModeListUpdated -= UpdateModeLogoList;
+        InventoryModeChangeDisplayManager.OnLeftRightClicked -= OnLeftRightClicked;
         
     }
     private void Start()

@@ -6,9 +6,18 @@ public class IntPerkHolder_IncrementedWithAmount : PerkHolder
 {
     [SerializeField]
     private List<IntPerk_IncrementedWithAmount> inttPerks_IncrementedWithAmount = new List<IntPerk_IncrementedWithAmount>();
-    public override void RedeemAllPerks()
+    public override bool RedeemAllPerks()
     {
-        foreach (var _perk in inttPerks_IncrementedWithAmount)
-            _perk.Redeem();
+        if (CoinsRequiredToUnlock <= PlayerCoinCount.Value)
+        {
+            foreach (var _perk in inttPerks_IncrementedWithAmount)
+            {
+                _perk.Redeem();
+            }
+            PlayerCoinCount.Value -= CoinsRequiredToUnlock;
+            return true;
+        }
+        return false;
+        
     }
 }

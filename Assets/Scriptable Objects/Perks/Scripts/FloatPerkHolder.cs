@@ -1,6 +1,7 @@
 ﻿public abstract class FloatPerkHolder : PerkHolder
 {
-    public override void RedeemAllPerks()
+    public override bool RedeemAllPerks()
     {
+        return false;
     }
 }

@@ -344,6 +344,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22224059}
   m_CullTransparentMesh: 0
+--- !u!1001 &23631201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5540945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3445332
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4592073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028009801144245712, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923870306183577402, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48c70a1124908c643b2eb323c4455781, type: 3}
 --- !u!21 &23916490
 Material:
   serializedVersion: 6
@@ -673,6 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51490209}
   - component: {fileID: 51490208}
+  - component: {fileID: 51490211}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -680,6 +738,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &51490211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51490210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 2
+  levelToLoad: Level 2
+  buttonClickSound: ButtonClick
 --- !u!1 &60111338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96451672}
   - component: {fileID: 96451679}
+  - component: {fileID: 96451674}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -1086,6 +1161,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &96451674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96451673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 4
+  levelToLoad: Level 4
+  buttonClickSound: ButtonClick
 --- !u!114 &96451679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,20 +1891,6 @@ Material:
     - _Position: {r: 1.5, g: 0.2, b: 1, a: 1}
     - _ResizeCircle: {r: 4, g: 1.38, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &288242511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620607952220787585}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a283937e762aa5247bb2d9649b615947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  timeElapsed: 0
 --- !u!21 &290627691
 Material:
   serializedVersion: 6
@@ -2080,6 +2157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366221371}
   - component: {fileID: 366221370}
+  - component: {fileID: 366221349}
   m_Layer: 5
   m_Name: 8
   m_TagString: Untagged
@@ -2087,6 +2165,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &366221349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366221348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!114 &366221370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,6 +2326,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1255924976, guid: bb65a7999f5a66d4fb15035c2102891d, type: 3}
+      propertyPath: ActiveScale.x
+      value: 0.15335502
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255924976, guid: bb65a7999f5a66d4fb15035c2102891d, type: 3}
+      propertyPath: ActiveScale.y
+      value: 0.15335502
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255924976, guid: bb65a7999f5a66d4fb15035c2102891d, type: 3}
+      propertyPath: ActiveScale.z
+      value: 0.15335502
+      objectReference: {fileID: 0}
     - target: {fileID: 8145213217017847092, guid: bb65a7999f5a66d4fb15035c2102891d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2768,6 +2874,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StadiumModel1
       objectReference: {fileID: 0}
+    - target: {fileID: 100382747563452842, guid: 1bbd45d801e91bf4481c0a5365ebf53c, type: 3}
+      propertyPath: ActiveScale.x
+      value: 0.35952184
+      objectReference: {fileID: 0}
+    - target: {fileID: 100382747563452842, guid: 1bbd45d801e91bf4481c0a5365ebf53c, type: 3}
+      propertyPath: ActiveScale.y
+      value: 0.35952184
+      objectReference: {fileID: 0}
+    - target: {fileID: 100382747563452842, guid: 1bbd45d801e91bf4481c0a5365ebf53c, type: 3}
+      propertyPath: ActiveScale.z
+      value: 0.35952184
+      objectReference: {fileID: 0}
     - target: {fileID: 733929780710433439, guid: 1bbd45d801e91bf4481c0a5365ebf53c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3155,6 +3273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601111189}
   - component: {fileID: 601111188}
+  - component: {fileID: 601111191}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -3162,6 +3281,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &601111191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601111190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 3
+  levelToLoad: Level 3
+  buttonClickSound: ButtonClick
 --- !u!1 &604889293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,40 +3602,6 @@ Material:
     - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _ResizeCircle: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &728481287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8412013304697622461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627a50d94d6ac9f4c80640c20cec2a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelNumberChild:
-  - {fileID: 896104265}
-  - {fileID: 51490208}
-  - {fileID: 601111188}
-  - {fileID: 96451679}
-  - {fileID: 1329008337}
-  - {fileID: 1214854763}
-  - {fileID: 1921674985}
-  - {fileID: 366221370}
-  - {fileID: 1519546607}
-  - {fileID: 947221301}
-  connectingChild:
-  - {fileID: 7898896998962582166}
-  - {fileID: 125442790}
-  - {fileID: 1241445859}
-  - {fileID: 1042832401}
-  - {fileID: 291100599}
-  - {fileID: 1558832308}
-  - {fileID: 1881450033}
-  - {fileID: 2142830863}
-  - {fileID: 1601642417}
-  index: 5
 --- !u!1 &745263670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4186,21 +4287,21 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 0.5
+    - _Alpha: 0
     - _BlendAmount: 0
     - _ColorMask: 15
     - _InvertMask: 0
     - _Radius: 0
-    - _Softness: 1
+    - _Softness: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     m_Colors:
-    - _CircleColor: {r: 1, g: 1, b: 1, a: 0}
+    - _CircleColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MaskColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MaskColor: {r: 0, g: 0, b: 0, a: 0}
     - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _ResizeCircle: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
@@ -4251,6 +4352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896104266}
   - component: {fileID: 896104265}
+  - component: {fileID: 896104268}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -4258,6 +4360,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &896104268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896104267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 1
+  levelToLoad: Level 1
+  buttonClickSound: ButtonClick
 --- !u!1 &910990615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,6 +4724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947221302}
   - component: {fileID: 947221301}
+  - component: {fileID: 947221304}
   m_Layer: 5
   m_Name: 10
   m_TagString: Untagged
@@ -4613,6 +4732,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &947221304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947221303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!1 &947606989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,7 +5840,8 @@ MonoBehaviour:
   - {fileID: 1255924976}
   - {fileID: 100382747563452842}
   isPlayClick: 1
-  iObject: {fileID: 989541540037023413}
+  infoButton: {fileID: 989541540037023413}
+  LevelButtonFillAnimationManager: {fileID: 8412013304697622463}
 --- !u!4 &1179742919
 Transform:
   m_ObjectHideFlags: 0
@@ -5885,6 +6021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214854804}
   - component: {fileID: 1214854763}
+  - component: {fileID: 1214854806}
   m_Layer: 5
   m_Name: 6
   m_TagString: Untagged
@@ -5892,6 +6029,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1214854806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214854805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!21 &1226080434
 Material:
   serializedVersion: 6
@@ -6431,6 +6584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1329008338}
   - component: {fileID: 1329008337}
+  - component: {fileID: 1329008340}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -6438,6 +6592,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1329008340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329008339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!1001 &1353318672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7290,6 +7460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519546600}
   - component: {fileID: 1519546607}
+  - component: {fileID: 1519546602}
   m_Layer: 5
   m_Name: 9
   m_TagString: Untagged
@@ -7297,6 +7468,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1519546602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519546601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!114 &1519546607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8534,6 +8721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921674986}
   - component: {fileID: 1921674985}
+  - component: {fileID: 1921674988}
   m_Layer: 5
   m_Name: 7
   m_TagString: Untagged
@@ -8541,6 +8729,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1921674988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921674987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e1450b38e042b48abcd5d9ace3a3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  levelNumber: 0
+  levelToLoad: 'Level '
+  buttonClickSound: ButtonClick
 --- !u!21 &1927577681
 Material:
   serializedVersion: 6
@@ -9255,7 +9459,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onButtonClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601111191}
+        m_TargetAssemblyTypeName: HomeScreenLevelButtonManager, Assembly-CSharp
+        m_MethodName: LevelButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &37152468294457957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10492,6 +10708,8 @@ MonoBehaviour:
   end: {x: 1000, y: 0, z: 2.4}
   isScale: 0
   timeElapsed: 0
+  ActiveScale: {x: 1, y: 1, z: 1}
+  animationSpeed: 2
 --- !u!224 &230565374064190321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10870,7 +11088,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1179742918}
         m_TargetAssemblyTypeName: ClickPlay_SD, Assembly-CSharp
-        m_MethodName: ClickEventUI
+        m_MethodName: StartUIPopUpPopDown
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12172,7 +12390,7 @@ GameObject:
   - component: {fileID: 1721763311448921251}
   - component: {fileID: 1721763311448921253}
   m_Layer: 5
-  m_Name: PlayGround
+  m_Name: Button Conainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12218,6 +12436,8 @@ MonoBehaviour:
   end: {x: -2000, y: 0, z: 2.4}
   isScale: 0
   timeElapsed: 0
+  ActiveScale: {x: 0.58521, y: 0.58521, z: 0.58521}
+  animationSpeed: 2
 --- !u!1 &1721763312246915009
 GameObject:
   m_ObjectHideFlags: 0
@@ -12849,6 +13069,9 @@ MonoBehaviour:
   - {fileID: 1881450033}
   - {fileID: 2142830863}
   - {fileID: 1601642417}
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  animationSpeedMultiplier: 1
+  animationStartTime: 1
   index: 1
 --- !u!1 &2620607952220787585
 GameObject:
@@ -12863,7 +13086,6 @@ GameObject:
   - component: {fileID: 8626482308905781036}
   - component: {fileID: 6356891871921521359}
   - component: {fileID: 2620607952220787584}
-  - component: {fileID: 288242511}
   m_Layer: 5
   m_Name: Levels
   m_TagString: Untagged
@@ -15296,7 +15518,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onButtonClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 96451674}
+        m_TargetAssemblyTypeName: HomeScreenLevelButtonManager, Assembly-CSharp
+        m_MethodName: LevelButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4871511375024906163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15907,7 +16141,7 @@ GameObject:
   - component: {fileID: 5251307834004236067}
   - component: {fileID: 5251307834004236075}
   m_Layer: 5
-  m_Name: SideButton-1
+  m_Name: Training Island Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18519,7 +18753,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onButtonClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51490211}
+        m_TargetAssemblyTypeName: HomeScreenLevelButtonManager, Assembly-CSharp
+        m_MethodName: LevelButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &6756621643258396427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18956,7 +19202,7 @@ GameObject:
   - component: {fileID: 7519303359856942984}
   - component: {fileID: 7519303359856942985}
   m_Layer: 5
-  m_Name: Play
+  m_Name: Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19071,7 +19317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1179742918}
         m_TargetAssemblyTypeName: ClickPlay_SD, Assembly-CSharp
-        m_MethodName: ClickEventUI
+        m_MethodName: StartUIPopUpPopDown
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19933,10 +20179,10 @@ MonoBehaviour:
   onButtonClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7669336455491912609}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 896104268}
+        m_TargetAssemblyTypeName: HomeScreenLevelButtonManager, Assembly-CSharp
+        m_MethodName: LevelButtonClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21019,8 +21265,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235275236047022270}
-  - component: {fileID: 728481287}
   - component: {fileID: 8412013304697622462}
+  - component: {fileID: 8412013304697622463}
   m_Layer: 5
   m_Name: LevelsParent
   m_TagString: Untagged
@@ -21044,6 +21290,45 @@ MonoBehaviour:
   end: {x: 1, y: 1, z: 1}
   isScale: 1
   timeElapsed: 0
+  ActiveScale: {x: 1, y: 1, z: 1}
+  animationSpeed: 2
+--- !u!114 &8412013304697622463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412013304697622461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627a50d94d6ac9f4c80640c20cec2a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumberChild:
+  - {fileID: 896104265}
+  - {fileID: 51490208}
+  - {fileID: 601111188}
+  - {fileID: 96451679}
+  - {fileID: 1329008337}
+  - {fileID: 1214854763}
+  - {fileID: 1921674985}
+  - {fileID: 366221370}
+  - {fileID: 1519546607}
+  - {fileID: 947221301}
+  connectingChild:
+  - {fileID: 7898896998962582166}
+  - {fileID: 125442790}
+  - {fileID: 1241445859}
+  - {fileID: 1042832401}
+  - {fileID: 291100599}
+  - {fileID: 1558832308}
+  - {fileID: 1881450033}
+  - {fileID: 2142830863}
+  - {fileID: 1601642417}
+  PlayerData: {fileID: 11400000, guid: 44f4e870716288f48a0beb368caf7090, type: 2}
+  animationSpeedMultiplier: 1
+  animationStartTime: 1
+  index: 1
 --- !u!224 &8425773254534830523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21444,7 +21729,7 @@ GameObject:
   - component: {fileID: 8601453244577259681}
   - component: {fileID: 8601453244577259689}
   m_Layer: 5
-  m_Name: SideButton-2
+  m_Name: Inventory Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb5ae168d5a5a840a8acff7db330ad6, type: 3}
   m_Name: New BeyBlade Inventory
   m_EditorClassIdentifier: 
+  PlayerCoinCount: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}

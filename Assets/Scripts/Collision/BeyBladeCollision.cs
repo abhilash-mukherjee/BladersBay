@@ -32,7 +32,10 @@ public class BeyBladeCollision : INormalCollision
             return;
         victims = m_collisionType.GetVictim(this);
         if (victims.Count != 0)
+        {
+            Debug.Log("Victim count nonZero");
             attackers = m_collisionType.GetAttacker(this);
+        }
         if (attackers.Count != 0)
             m_collisionIndex = CalculateCollisionIndex();
         m_collisionVelocityMultiplier = _collisionVelocityMultiplier;

@@ -7,6 +7,8 @@ public class BeyBladeSpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject Player, Enemy;
     [SerializeField]
+    private BeyBladeHealthManager enemyHealthManager, playerHealthManager;
+    [SerializeField]
     private Vector3 playerInitialPos, enemyInitialPos;
     private void Awake()
     {
@@ -25,8 +27,10 @@ public class BeyBladeSpawnManager : MonoBehaviour
     private void SpawnBeyBlades()
     {
         Player.SetActive(true);
+        playerHealthManager.MaximizeHealth();
         Player.transform.position = playerInitialPos;
         Enemy.SetActive(true);
+        enemyHealthManager.MaximizeHealth();
         Enemy.transform.position = enemyInitialPos;
     }
 

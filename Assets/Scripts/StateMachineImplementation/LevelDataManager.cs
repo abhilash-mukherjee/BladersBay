@@ -26,6 +26,7 @@ public class LevelDataManager: MonoBehaviour
         }
         if (levelData.LevelIndex == playerData.MaximumLevelUnlocked.Value)
         {
+            Debug.Log("New level unlocked");
             playerData.DidLastBattleUnlockNewLevel.Value = true;
             playerData.MaximumLevelUnlocked.Value++;
         }

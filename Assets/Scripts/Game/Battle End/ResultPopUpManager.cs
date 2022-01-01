@@ -23,7 +23,7 @@ public class ResultPopUpManager : MonoBehaviour
     private void OnDisable()
     {
         WinnerDecideManager.OnResultsDecided -= CheckIfWonOrLost;
-        ParabolaController.OnParabolaReachedDestination += PopUpMessege;
+        ParabolaController.OnParabolaReachedDestination -= PopUpMessege;
     }
 
     private void PopUpMessege()

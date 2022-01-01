@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New BeyBlade Inventory", menuName = "Inventory")]
 public class BeyBladeInventory : ScriptableObject
 {
+    [SerializeField]
+    private IntVariable PlayerCoinCount;
     private List<PerkHolder> inventoryPerkList = new List<PerkHolder>();
 
     public List<PerkHolder> InventoryPerkList { get => inventoryPerkList; }
@@ -14,8 +16,11 @@ public class BeyBladeInventory : ScriptableObject
             return;
         else
         {
-            if(_perk.perkPrefab != null)
-                _perk.perkPrefab.AddComponent<TransitionCard_SD>();
+            if (_perk.perkPrefab != null)
+            {
+                if(_perk.perkPrefab.GetComponent<DiaplayablePerk>() == null )
+                    _perk.perkPrefab.AddComponent<DiaplayablePerk>();
+            }
             inventoryPerkList.Add(_perk);
         }
     }

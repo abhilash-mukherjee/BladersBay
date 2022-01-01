@@ -22,6 +22,7 @@ public class HeadOnCollisionType : BeyBladeCollisionType
         var _AttackerList = new List<ICollidingBeyBlade>();
         _AttackerList.Add(_collision.BeyBlade1);
         _AttackerList.Add(_collision.BeyBlade2);
+        Debug.Log($"Attacker's List length = {_AttackerList.Count} and Elements = {_AttackerList[0]} , {_AttackerList[1]}");
         return _AttackerList;
     }
 

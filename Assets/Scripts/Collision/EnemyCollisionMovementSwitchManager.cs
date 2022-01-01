@@ -29,12 +29,10 @@ public class EnemyCollisionMovementSwitchManager : CollisionMovementSwitchManage
     }
     IEnumerator EndCollsion(float _endTime)
     {
-        Debug.Log("Coroutine started");
         m_isCoroutineRunning = true;
         yield return new WaitForSeconds(_endTime);
         collisionMovementManager.enabled = false;
         ordinaryMovementManager.enabled = true;
         m_isCoroutineRunning = false;
-        Debug.Log("Coroutine ended");
     }
 }

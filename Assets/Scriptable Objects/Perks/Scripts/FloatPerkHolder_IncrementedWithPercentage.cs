@@ -6,9 +6,17 @@ public class FloatPerkHolder_IncrementedWithPercentage : FloatPerkHolder
 {
     [SerializeField]
     private List<FloatPerk_IncrementedWithPercentage> floatPerks_IncrementedWithPercentage = new List<FloatPerk_IncrementedWithPercentage>();
-    public override void RedeemAllPerks()
+    public override bool RedeemAllPerks()
     {
-        foreach (var _perk in floatPerks_IncrementedWithPercentage)
-            _perk.Redeem();
+        if (CoinsRequiredToUnlock <= PlayerCoinCount.Value)
+        {
+            foreach (var _perk in floatPerks_IncrementedWithPercentage)
+            {
+                _perk.Redeem();
+            }
+            PlayerCoinCount.Value -= CoinsRequiredToUnlock;
+            return true;
+        }
+        return false;
     }
 }
