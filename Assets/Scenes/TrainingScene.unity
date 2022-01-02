@@ -6023,7 +6023,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onButtonClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2181625677661562934}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stamina Training
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &2181625677661562931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6061,6 +6073,7 @@ GameObject:
   - component: {fileID: 2181625677661562940}
   - component: {fileID: 2181625677661562941}
   - component: {fileID: 2181625677661562933}
+  - component: {fileID: 2181625677661562934}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -6082,6 +6095,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: {fileID: 11400000, guid: 93df0b1d139934147821007690eeaedb, type: 2}
   image: {fileID: 2181625676726873410}
+--- !u!114 &2181625677661562934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181625677661562932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5063b18a392184180494e8c4f46e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &2181625677661562940
 CanvasRenderer:
   m_ObjectHideFlags: 0

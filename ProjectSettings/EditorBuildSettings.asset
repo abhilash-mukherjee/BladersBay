@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: cbb3260ec32dfea408c35b35249778bb
+  - enabled: 1
+    path: Assets/Scenes/Stamina Training.unity
+    guid: c1fe0a71335e3f944947b8f6dd8ada43
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 23bb74e45eaa01d4880297f854ee74d8
   m_configObjects: {}

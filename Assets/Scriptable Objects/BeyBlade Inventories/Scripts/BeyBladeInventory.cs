@@ -10,6 +10,15 @@ public class BeyBladeInventory : ScriptableObject
     private List<PerkHolder> inventoryPerkList = new List<PerkHolder>();
 
     public List<PerkHolder> InventoryPerkList { get => inventoryPerkList; }
+
+    private void OnEnable()
+    {
+        inventoryPerkList.Clear();
+    }
+    private void OnDisable()
+    {
+        inventoryPerkList.Clear();
+    }
     public void AddPerkToInventory(PerkHolder _perk)
     {
         if (inventoryPerkList.Contains(_perk))

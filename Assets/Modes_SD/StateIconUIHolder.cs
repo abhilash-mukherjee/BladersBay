@@ -37,6 +37,7 @@ public class StateIconUIHolder : MonoBehaviour
     {
         if (StateData.IsLocked)
             gameObject.SetActive(false);
+        StateData.CurrentAvailabilityIndex = 0f;
         transitionAnimator = transitionEffect.GetComponent<Animator>();
     }
     public void DisplayUI()

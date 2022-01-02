@@ -1974,6 +1974,18 @@ MonoBehaviour:
   onButtonClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7880603315022390532}
+        m_TargetAssemblyTypeName: PerkButtonClickManagerForModePerks, Assembly-CSharp
+        m_MethodName: RemovePerkFromDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack Training
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3306196894511416610}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1984,18 +1996,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Attack Training
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7880603315022390532}
-        m_TargetAssemblyTypeName: PerkButtonClickManagerForModePerks, Assembly-CSharp
-        m_MethodName: RemovePerkFromDisplay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &2046894779037064393

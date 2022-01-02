@@ -101,6 +101,7 @@ public class CollisionManager : MonoBehaviour
     }
     IEnumerator TurnOffCollisionGlitchPhaseAfterGivenTime(float _timeGapBetweenTwoCollisions)
     {
+        AudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
         yield return new WaitForSeconds(_timeGapBetweenTwoCollisions);
         OnCollisionEnded?.Invoke(m_glitchyCollision);
         m_isCollisionGlitchPhaseOn = false;

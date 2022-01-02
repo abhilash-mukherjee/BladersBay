@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: UnlockDefence
   m_EditorClassIdentifier: 
   perkPrefab: {fileID: 4786977583315393593, guid: 3c9e3034fddfbfd4695b5de863da8d60, type: 3}
-  coinsRequiredToUnlock: 0
-  playerCoinCount: {fileID: 0}
+  coinsRequiredToUnlock: 30
+  playerCoinCount: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}
   booleanPerks:
   - BoolVariable: {fileID: 11400000, guid: 050a597151eb03f4fa8f67d0b80d192c, type: 2}
     finalBool: 0

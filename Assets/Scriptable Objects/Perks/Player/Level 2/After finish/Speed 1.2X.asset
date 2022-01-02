@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5185006c048614c880bddccde666ba, type: 3}
   m_Name: Speed 1.2X
   m_EditorClassIdentifier: 
-  perkPrefab: {fileID: 4282966848670354401, guid: adb1b2ec48b84f24baaaeba52a0dc89c, type: 3}
+  perkPrefab: {fileID: 4204394383428314747, guid: a6b4b21d26b0c8a47b9b22b24e3f1ad2, type: 3}
   coinsRequiredToUnlock: 10
   playerCoinCount: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}
   floatPerks_IncrementedWithPercentage:

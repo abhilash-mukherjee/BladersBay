@@ -1497,7 +1497,7 @@ MonoBehaviour:
   redeemSuccededPanel: {fileID: 3981905326531051555}
   redeemFailedPanel: {fileID: 2247208132804489474}
   perkPanel: {fileID: 6444506937685478353}
-  perkHolder: {fileID: 11400000, guid: 49faed04479dd8a42a7dbe17dda1f373, type: 2}
+  perkHolder: {fileID: 11400000, guid: eee57f31722073942bb43dd62df21a9c, type: 2}
   inventory: {fileID: 11400000, guid: f5ccdd41878ceb64a9b2745fa03c344b, type: 2}
 --- !u!114 &1304304701405279141
 MonoBehaviour:
