@@ -20,7 +20,7 @@ public class HomeScreenLevelButtonManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene(levelToLoad);
-            AudioManager.Instance.PlaySoundOneShot(buttonClickSound);
+            GameAudioManager.Instance.PlaySoundOneShot(buttonClickSound);
         }
     }
 

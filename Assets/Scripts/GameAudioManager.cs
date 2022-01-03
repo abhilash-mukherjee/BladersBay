@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public class AudioManager : MonoBehaviour
+public class GameAudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static GameAudioManager Instance;
     public List<Sound> sounds;
 
     private void Awake()

@@ -19,7 +19,7 @@ public class UIBeyBladeFightAudioAndEffectsManager : MonoBehaviour
 
     private void PlayAudio()
     {
-        AudioManager.Instance.PlaySoundOneShot(collisionAudioName);
+        GameAudioManager.Instance.PlaySoundOneShot(collisionAudioName);
     }
 
     private void PlayVFX()

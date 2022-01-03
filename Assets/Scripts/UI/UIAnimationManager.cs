@@ -19,7 +19,7 @@ public class UIAnimationManager : MonoBehaviour
 
     public void PlayClashSound()
     {
-        AudioManager.Instance.PlaySoundOneShot("BeyBladeClash");
+        GameAudioManager.Instance.PlaySoundOneShot("BeyBladeClash");
     }
 
 }

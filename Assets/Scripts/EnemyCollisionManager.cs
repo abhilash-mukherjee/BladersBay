@@ -108,7 +108,7 @@ public class EnemyCollisionManager : MonoBehaviour
     {
         if(!isCollisionPlaying)
         {
-            AudioManager.Instance.PlaySoundOneShot("BeyBladeHit");
+            GameAudioManager.Instance.PlaySoundOneShot("BeyBladeHit");
             isCollisionPlaying = true;
             StartCoroutine(ReplayHitSound( replaySoundTime));
         }

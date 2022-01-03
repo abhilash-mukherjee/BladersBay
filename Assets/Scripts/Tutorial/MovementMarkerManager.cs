@@ -28,7 +28,7 @@ public class MovementMarkerManager : MonoBehaviour
             if(CheckCollision())
             {
                 OnTargetReached?.Invoke();
-                AudioManager.Instance.PlaySoundOneShot(markerReachedSoundName);
+                GameAudioManager.Instance.PlaySoundOneShot(markerReachedSoundName);
                 DestroyMarker();
             }
         }

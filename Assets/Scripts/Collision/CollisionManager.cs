@@ -55,7 +55,7 @@ public class CollisionManager : MonoBehaviour
             if (m_isCollisionPhaseOn)
                 return;
             Instantiate(collisionSpark, (player1Collider.gameObject.transform.position + player2Collider.gameObject.transform.position) / 2f, Quaternion.identity);
-            AudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
+            GameAudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
             Debug.Log("After audio played");
             m_normalCollision = new BeyBladeCollision(player1Collider.gameObject, player2Collider.gameObject, collisionTypes, collisionVelocityMultiplier,
                 staticCollisionVelocityLimit, staticCollisionVelocityMultiplier);            
@@ -101,7 +101,7 @@ public class CollisionManager : MonoBehaviour
     }
     IEnumerator TurnOffCollisionGlitchPhaseAfterGivenTime(float _timeGapBetweenTwoCollisions)
     {
-        AudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
+        GameAudioManager.Instance.PlaySoundOneShot(beybladeHitSound);
         yield return new WaitForSeconds(_timeGapBetweenTwoCollisions);
         OnCollisionEnded?.Invoke(m_glitchyCollision);
         m_isCollisionGlitchPhaseOn = false;

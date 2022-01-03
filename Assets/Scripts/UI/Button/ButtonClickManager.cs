@@ -6,6 +6,6 @@ public class ButtonClickManager : MonoBehaviour
 {
     public void PlayAudio()
     {
-        AudioManager.Instance.PlaySoundOneShot("ButtonClick");
+        GameAudioManager.Instance.PlaySoundOneShot("ButtonClick");
     }
 }

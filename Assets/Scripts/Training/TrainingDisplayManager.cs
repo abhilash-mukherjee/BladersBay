@@ -34,7 +34,7 @@ public class TrainingDisplayManager : MonoBehaviour
     }
     public void PlaySound(string _soundName)
     {
-        AudioManager.Instance.PlaySoundOneShot(_soundName);
+        GameAudioManager.Instance.PlaySoundOneShot(_soundName);
     }
     private void Update()
     {

@@ -19,7 +19,7 @@ public class MovementTrainingManager : MonoBehaviour
     private int m_index = 0;
 
     public void PlayAudio(string _audioclip){
-        AudioManager.Instance.PlaySoundOneShot(_audioclip);
+        GameAudioManager.Instance.PlaySoundOneShot(_audioclip);
     }
     private void OnEnable()
     {

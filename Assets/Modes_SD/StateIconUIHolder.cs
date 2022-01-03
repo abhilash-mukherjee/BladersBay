@@ -49,7 +49,7 @@ public class StateIconUIHolder : MonoBehaviour
                 return;
             isCharged = true;
             isCoroutineCalled = true;
-            AudioManager.Instance.PlaySoundOneShot(electricitySoundName);
+            GameAudioManager.Instance.PlaySoundOneShot(electricitySoundName);
             transitionEffect.SetActive(true);
             Debug.Log("entered coroutine");
             logo.GetComponent<Image>().color = activeColor;

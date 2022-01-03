@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028009801144245712}
-  - component: {fileID: 4885721961201736400}
+  - component: {fileID: 7470311451501492447}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4885721961201736400
+--- !u!114 &7470311451501492447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3923870306183577402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b987bae28ce09734fb7ec61777745a45, type: 3}
+  m_Script: {fileID: 11500000, guid: b71aee970f4bfed42953216bffa963f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
@@ -68,7 +68,7 @@ MonoBehaviour:
     loop: 0
     name: SplashScreenAudio1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 785b060a4c915f6429eda2d2c7a599ec, type: 3}
+  - clip: {fileID: 8300000, guid: bdaa6408053047242ac8ca283e98c3de, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
     loop: 0
     name: ButtonClick
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: de458e4d360a4804ea295221a3490358, type: 3}
+  - clip: {fileID: 8300000, guid: 8d7c18f503ef25545b54b4fe246200de, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: e3387d4c30ca9354cb331153a2e599f2, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     name: One
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 7325bbf5ec6c32348a07966aa8b2880e, type: 3}
@@ -137,6 +137,6 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: de458e4d360a4804ea295221a3490358, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     name: PanelPopUp
     source: {fileID: 0}

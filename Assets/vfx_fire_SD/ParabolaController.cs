@@ -133,7 +133,7 @@ public class ParabolaController : MonoBehaviour
 
     private void RaiseParabolaCompletedEvent()
     {
-        AudioManager.Instance.PlaySoundOneShot(parabolaReachSoundName);
+        GameAudioManager.Instance.PlaySoundOneShot(parabolaReachSoundName);
         OnParabolaReachedDestination?.Invoke();
     }
 

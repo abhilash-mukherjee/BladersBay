@@ -7,8 +7,8 @@ public class PlaySoundEffect : BehaviourAction
     private string soundName = "Wind";
     public override void Act(StateController _stateController, State _currentState)
     {
-        if (!AudioManager.Instance.IsSoundPlaying(soundName))
-            AudioManager.Instance.PlaySoundOneShot(soundName);
+        if (!GameAudioManager.Instance.IsSoundPlaying(soundName))
+            GameAudioManager.Instance.PlaySoundOneShot(soundName);
     }
 }
 

@@ -50,7 +50,7 @@ public class UIBeybladeRotation : MonoBehaviour
     {
         speed = initialSpeed;
         time = 0;
-        AudioManager.Instance.PlaySoundWithDecay("BeyBladeSpin", soundDecayRate);
+        GameAudioManager.Instance.PlaySoundWithDecay("BeyBladeSpin", soundDecayRate);
         startRotating = true;
     }
     IEnumerator StartAnimation()
