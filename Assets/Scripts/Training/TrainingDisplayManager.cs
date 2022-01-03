@@ -38,6 +38,9 @@ public class TrainingDisplayManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(m_currentAvailabilityStatus);
+        Debug.Log(playerStateController);
+        Debug.Log(playerStateController.StateDict.ToString());
         if (m_currentAvailabilityStatus == playerStateController.StateDict[targetModeName].AvailabilityStatus.Name)
         {
             return;

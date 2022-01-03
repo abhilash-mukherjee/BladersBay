@@ -18,10 +18,13 @@ public class StateController : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Lorem Ipsum  skjdfjnsdfndsj");
+        Debug.Log( "Dictionary" +  stateDictHolder.StateDictionary.Keys.Count);
         m_stateDict = stateDictHolder.StateDictionary;
         if (m_stateDict == null)
             Debug.LogError("State Dict is not set to an instance of stateDict");
         m_currentState = m_stateDict[StartingState];
+        Debug.Log(m_stateDict[StartingState]);
         if (m_currentState == null)
             Debug.LogError("Current State is not set to an instance of State");
     }

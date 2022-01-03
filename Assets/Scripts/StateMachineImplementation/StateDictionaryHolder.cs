@@ -25,6 +25,8 @@ public class StateDictionaryHolder : MonoBehaviour
                 lockedStates.Add(_element.Key);
         foreach (var _lockedState in lockedStates)
             myDictionary.Remove(_lockedState);
+
+        Debug.Log("Starting Dict Holder" +  myDictionary.Keys.Count);
     }
 
 }

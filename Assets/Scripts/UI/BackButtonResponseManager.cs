@@ -6,6 +6,8 @@ using JMRSDK.InputModule;
 
 public class BackButtonResponseManager : MonoBehaviour, IBackHandler
 {
+    [SerializeField]
+    private GameEvent OnBackPressed;
     public delegate void BackButtonHandler();
     public static event BackButtonHandler OnBackButtonPressed;
     private void Start()
@@ -15,6 +17,7 @@ public class BackButtonResponseManager : MonoBehaviour, IBackHandler
     public void OnBackAction()
     {
         OnBackButtonPressed?.Invoke();
+        OnBackPressed.Raise();
     }
 
 }

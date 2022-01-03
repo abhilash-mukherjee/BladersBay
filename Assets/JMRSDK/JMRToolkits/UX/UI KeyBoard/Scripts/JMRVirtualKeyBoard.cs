@@ -324,6 +324,10 @@ namespace JMRSDK.Toolkit.UI
                         j_counter = j_doubleTapDelay + 1;
                         isUpperCase = isTempUpper = true;
                     }
+                    else if(j_counter==0)
+                    {
+                        isUpperCase = isTempUpper = true;
+                    }
                     else
                     {
                         if (isUpperCase)
@@ -480,8 +484,12 @@ namespace JMRSDK.Toolkit.UI
         System.Collections.IEnumerator WaitTillEOF()
         {
             yield return new WaitForEndOfFrame();
+
             if (string.IsNullOrEmpty(j_input.Text))
+            {
+                j_counter = 0;
                 HandleMessage(Constants.CASE_TAP);
+            }
             // HideKeyBoard();
             while (JMRCameraUtility.Main == null)
             {

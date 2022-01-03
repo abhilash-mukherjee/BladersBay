@@ -1,6 +1,8 @@
 ****************************************JMRServices_Version-Info****************************************
-common-1.5.20
-tmrServicesSDK-release-4.7.1
+tmrServicesSDK-debug-4.8.7
 utility-debug
 ****************************************JMRNetworkConnection_Version-Info****************************************
 networkconnectionsdk-release
+****************************************JMRCommonService_Version-Info****************************************
+commonServiceSDK-release-1.0.1
+************************************************************************************************************

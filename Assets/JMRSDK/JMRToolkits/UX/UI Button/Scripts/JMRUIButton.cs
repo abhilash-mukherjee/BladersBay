@@ -60,9 +60,5 @@ namespace JMRSDK.Toolkit.UI
             onButtonClick?.Invoke();
         }
         #endregion
-        public void Action()
-        {
-            GameSceneManager.Instance.PlayGame();
-        }
     }
 }

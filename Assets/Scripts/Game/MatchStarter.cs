@@ -8,10 +8,11 @@ public class MatchStarter : MonoBehaviour
     private GameEvent OnMatchStarted;
     [SerializeField]
     private float startMatchTime = 3f;
-    private void Awake()
+    public void MatchStartButtonClicked()
     {
         StartCoroutine(StartMatch(startMatchTime));
     }
+   
 
     IEnumerator StartMatch(float _time)
     {

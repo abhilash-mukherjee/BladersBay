@@ -50,6 +50,12 @@ public class BeyBladeHealthManager : MonoBehaviour
 
     private void Update()
     {
+        if(stateController.CurrentState == null)
+        {
+            Debug.LogError("Current state is null");
+            return;
+        }
+        Debug.Log(stateController.CurrentState);
         m_CurrentHealth += stateController.CurrentState.Data.StaminaValue * Time.deltaTime * staminaConstant;
     }
     private  void HandleHealthAfterCollision(INormalCollision _Collision)

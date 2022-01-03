@@ -93,4 +93,5 @@ public class CanvasDisplayManager : MonoBehaviour
         previousDisplayableSlot.DisappearReverse();
         currentDisplayableSlot.AppearReverse();
     }
+
 }
