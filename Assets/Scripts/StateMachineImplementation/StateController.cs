@@ -19,6 +19,7 @@ public class StateController : MonoBehaviour
     private void Start()
     {
         Debug.Log("Lorem Ipsum  skjdfjnsdfndsj");
+        stateDictHolder.CustomAwake();
         Debug.Log( "Dictionary" +  stateDictHolder.StateDictionary.Keys.Count);
         m_stateDict = stateDictHolder.StateDictionary;
         if (m_stateDict == null)

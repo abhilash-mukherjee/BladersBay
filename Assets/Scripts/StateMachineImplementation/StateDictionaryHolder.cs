@@ -13,7 +13,7 @@ public class StateDictionaryHolder : MonoBehaviour
 
     public Dictionary<BeyBladeStateName, State> StateDictionary { get => myDictionary;}
 
-    private void Awake()
+    public void CustomAwake()
     {
         for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)
         {
