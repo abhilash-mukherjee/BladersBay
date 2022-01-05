@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class BeyBladeData : ScriptableObject
 {
     public StateData AttackData, DefenceData, StaminaData, BalanceData;
+    public string ModelName;
     public GameObject Model;
-    public Image icon;
+    public Sprite icon;
 }
  
