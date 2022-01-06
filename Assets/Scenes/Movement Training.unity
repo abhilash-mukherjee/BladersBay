@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8598302089874155561, guid: 633a1e3825e2f6e4c81ef8bf448d11cd, type: 3}
       propertyPath: allowPersist
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9184605373608753297, guid: 633a1e3825e2f6e4c81ef8bf448d11cd, type: 3}
       propertyPath: m_Name
@@ -2981,6 +2981,7 @@ MonoBehaviour:
   looseMessege: {fileID: 0}
   levelRepeatWinMessege: {fileID: 0}
   levelData: {fileID: 11400000, guid: 3d4a8fe4e8d6594468736c612e4cfda3, type: 2}
+  objectsToDisable: []
 --- !u!114 &1400112310939635301
 MonoBehaviour:
   m_ObjectHideFlags: 0
