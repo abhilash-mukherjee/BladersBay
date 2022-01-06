@@ -9,6 +9,8 @@ public class ResultPopUpManager : MonoBehaviour
     private GameObject player, winMessege, looseMessege, levelRepeatWinMessege;
     [SerializeField]
     private LevelData levelData;
+    [SerializeField]
+    private List<GameObject> objectsToDisable = new List<GameObject>();
     private bool m_hasPlayerWon = false;
     private bool m_isLevelVisited = false;
     private void Awake()
@@ -28,6 +30,10 @@ public class ResultPopUpManager : MonoBehaviour
 
     private void PopUpMessege()
     {
+        foreach (var _gO in objectsToDisable)
+        {
+            _gO.SetActive(false);
+        }
         if (m_hasPlayerWon)
         {
             if (m_isLevelVisited)

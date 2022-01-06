@@ -16,6 +16,7 @@ MonoBehaviour:
   DefenceData: {fileID: 11400000, guid: 771bce65f67727e48b99f63e5f8c80a6, type: 2}
   StaminaData: {fileID: 11400000, guid: 0b8793564abd6f74681e1370c4d34d56, type: 2}
   BalanceData: {fileID: 11400000, guid: ccd471b791f68934fa7f517bd0cb0466, type: 2}
+  ModelName: You
   Model: {fileID: 8902193564919954162, guid: 3cbfa6bae78e1d841ba38b43a1551621, type: 3}
   icon: {fileID: 21300000, guid: 496f21596db0d5a44904ddc2655c2d06, type: 3}
   CoinsEarned: {fileID: 11400000, guid: f05e804490df90e4e9b78cb4ef1f2fde, type: 2}

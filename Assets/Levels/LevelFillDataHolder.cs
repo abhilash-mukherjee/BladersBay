@@ -11,4 +11,5 @@ public class LevelFillDataHolder : MonoBehaviour
     public TextMeshProUGUI displayText;
     public bool isFilled = false;
     public float timeElapsed = 0f;
+    public GameObject lockIcon;
 }

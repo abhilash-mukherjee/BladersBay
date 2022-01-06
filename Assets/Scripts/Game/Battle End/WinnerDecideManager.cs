@@ -8,6 +8,8 @@ public class WinnerDecideManager : MonoBehaviour
     public static event ResultsDecidedHandler OnResultsDecided;
     [SerializeField]
     private List<GameObject> BeyBladeList = new List<GameObject>();
+    [SerializeField]
+    private GameEvent matchEndEvent;
     private GameObject m_winner, m_losser;
     public void DetermineWnnerAndLooser(GameObject _gameObject)
     {
@@ -20,6 +22,7 @@ public class WinnerDecideManager : MonoBehaviour
         else
         {
             OnResultsDecided?.Invoke(m_winner, m_losser);
+            matchEndEvent.Raise();
         }
     }
 }

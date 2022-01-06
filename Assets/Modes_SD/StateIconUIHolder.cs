@@ -33,7 +33,7 @@ public class StateIconUIHolder : MonoBehaviour
         DisplayUI();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (StateData.IsLocked)
             gameObject.SetActive(false);

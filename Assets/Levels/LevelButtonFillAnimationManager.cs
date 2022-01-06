@@ -25,6 +25,7 @@ public class LevelButtonFillAnimationManager : MonoBehaviour
         {
             levelNumberChild[i-1].displayUI.fillAmount = 1f;
             levelNumberChild[i-1].centerUI.gameObject.SetActive(true);
+            levelNumberChild[i-1].lockIcon.SetActive(false);
             // levelNumberChild[i-1].displayText.color = new Color()
             if (i != 1)
                 connectingChild[i - 2].displayUI.fillAmount = 1f;
@@ -52,6 +53,7 @@ public class LevelButtonFillAnimationManager : MonoBehaviour
     }
     IEnumerator FillStroke(int index)
     {
+        levelNumberChild[index].lockIcon.SetActive(false);
         float timeElapsed = levelNumberChild[index].timeElapsed;
         while (levelNumberChild[index].displayUI.fillAmount < 1f)
         {
